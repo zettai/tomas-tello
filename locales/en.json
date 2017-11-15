@@ -1,0 +1,17 @@
+{
+    "links": {
+      "home": "Music",
+      "about": "About",
+      "english": "English version",
+      "french": "French version"
+    },
+    "home": {
+      "title": "Welcome",
+      "introduction": "Coming soon."
+    },
+    "about": {
+      "title": "About",
+      "introduction": "Coming soon."
+    }
+  }
+  

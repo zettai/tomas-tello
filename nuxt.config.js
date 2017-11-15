@@ -21,24 +21,30 @@ module.exports = {
   ** Customize the generated output folder
   */
   generate: {
-    dir: 'public'
+    dir: 'public',
+    routes: ['/', '/about', '/fr', '/fr/about']
   },
   /*
   ** Build configuration
   */
   build: {
+    vendor: ['vue-i18n'],
     /*
     ** Run ESLint on save
     */
-    extend (config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  }
+    // extend (config, ctx) {
+    //   if (ctx.dev && ctx.isClient) {
+    //     config.module.rules.push({
+    //       enforce: 'pre',
+    //       test: /\.(js|vue)$/,
+    //       loader: 'eslint-loader',
+    //       exclude: /(node_modules)/
+    //     })
+    //   }
+    // }
+  },
+  router: {
+    middleware: 'i18n'
+  },
+  plugins: ['~/plugins/i18n.js']
 }
