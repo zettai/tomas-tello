@@ -1,3 +1,5 @@
+const { generateRoutes } = require('./utils/router')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -28,7 +30,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['vue-i18n'],
+    vendor: ['vue-i18n', 'axios']
     /*
     ** Run ESLint on save
     */
@@ -44,7 +46,16 @@ module.exports = {
     // }
   },
   router: {
-    middleware: 'i18n'
+    middleware: ['i18n'],
+    extendRoutes (routes) {
+      const newRoutes = generateRoutes(routes)
+      routes.splice(0, routes.length)
+      routes.unshift(...newRoutes)
+    }
   },
-  plugins: ['~/plugins/i18n.js']
+  plugins: [
+    { src: '~/plugins/global-mixin.js' },
+    { src: '~/plugins/axios.js' },
+    { src: '~/plugins/vue-i18n.js', injectAs: 'i18n' }
+  ]
 }
