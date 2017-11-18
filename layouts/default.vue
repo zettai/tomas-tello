@@ -102,4 +102,8 @@ header a {
 section {
   margin-bottom: auto;
 }
+
+.f6 {
+  font-size: xx-large;
+}
 </style>
