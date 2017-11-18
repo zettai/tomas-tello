@@ -13,6 +13,12 @@
         {{ $t('labels.about') }}
       </nuxt-link>
       <LangSwitcher />
+       <!-- <audio controls>
+  <source src="/01-laGuardianaDeLasOndasRadiales1.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<a href="/01-laGuardianaDeLasOndasRadiales1.mp3" download="01-laGuardianaDeLasOndasRadiales1.mp3">download</a> -->
+
     </header>
     <nuxt/>
   </div>

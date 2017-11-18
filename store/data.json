@@ -1,1 +1,85 @@
-[{"albums":[{"id":"01","title":"hantukaray suni","artist":"tomas tello","songs":[{"id":"01","title":"meseta de madrugada"},{"id":"02","title":"ninhos"},{"id":"03","title":"flautista al lado del rio (pisqueras)"},{"id":"04","title":"de la toma a la laguna"},{"id":"05","title":"de nuevo los ninhos"},{"id":"06","title":"inti"},{"id":"07","title":"tormenta"},{"id":"08","title":"saqra"},{"id":"09","title":"llankay"}]},{"id":"02","title":"shaolines del amor","artist":"shaolines del amor","songs":[{"id":"01","title":"la guardiana de las ondas radiales 1"},{"id":"02","title":"la guardiana de las ondas radiales 1"},{"id":"03","title":"shaolines del amor 1"},{"id":"04","title":"cerrando el concierto - shaolines"}]}]}]
+[
+  {
+     "albums":[
+        {
+           "id":"01",
+           "title":"hantukaray suni",
+           "artist":"tomas tello",
+           "songs":[
+              {
+                 "id":"01",
+                 "title":"meseta de madrugada",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"02",
+                 "title":"ninhos",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"03",
+                 "title":"flautista al lado del rio (pisqueras)",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"04",
+                 "title":"de la toma a la laguna",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"05",
+                 "title":"de nuevo los ninhos",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"06",
+                 "title":"inti",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"07",
+                 "title":"tormenta",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"08",
+                 "title":"saqra",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"09",
+                 "title":"llankay",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              }
+           ]
+        },
+        {
+           "id":"02",
+           "title":"shaolines del amor",
+           "artist":"shaolines del amor",
+           "songs":[
+              {
+                 "id":"01",
+                 "title":"la guardiana de las ondas radiales 1",
+                 "url":"https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+              },
+              {
+                 "id":"02",
+                 "title":"la guardiana de las ondas radiales 1",
+                 "url":"https://tomas-tello.netlify.com/02-laGuardianaDeLasOndasRadiales2.mp3"
+              },
+              {
+                 "id":"03",
+                 "title":"shaolines del amor 1",
+                 "url":"https://tomas-tello.netlify.com/03-shaolinesdelamor1.mp3"
+              },
+              {
+                 "id":"04",
+                 "title":"cerrando el concierto - shaolines",
+                 "url":"https://tomas-tello.netlify.com/04-cerrando_el_conciertoshaolines.mp3"
+              }
+           ]
+        }
+     ]
+  }
+]

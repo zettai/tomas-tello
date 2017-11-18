@@ -9,10 +9,13 @@
 
     <ul class="list ph2 mv0">
             <li class="item f6" v-for="(item, index) in items[routeSlug()].songs" :key="item.id">
-
-
                     {{item.title}}
 
+            <audio controls>
+            <source :src="item.url" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+            <a :href="item.url" :download="item.url">download</a>
             </li>
         </ul>
   </section>
