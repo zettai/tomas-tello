@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import createLogger from 'vuex/dist/logger'
-import axios from '~/plugins/axios'
+// import axios from '~/plugins/axios'
 import data from './data.json'
 import i18n from './i18n'
 

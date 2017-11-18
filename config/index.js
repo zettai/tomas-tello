@@ -32,17 +32,17 @@ const I18N = {
 // If a route/locale is omitted, defaults to Nuxt's generated path
 const ROUTES_ALIASES = {
   about: {
-    fr: '/a-propos',
-    en: '/about-us',
-    es: '/sobre-tomas'
+
   },
   category: {
     fr: '/categorie',
-    es: '/albums'
+    es: '/categoria',
+    en: '/category'
   },
   'category-slug': {
     fr: '/categorie/:slug',
-    es: '/albums/:slug'
+    es: '/categoria/:slug',
+    en: '/category/:slug'
   }
 }
 

@@ -17,5 +17,5 @@
  */
 export default {
   name: "LangSwitcher"
-};
+}
 </script>

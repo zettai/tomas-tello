@@ -32,7 +32,6 @@ export default {
   computed: mapState(["items"])
   }
 
-
 </script>
 
 <style>
