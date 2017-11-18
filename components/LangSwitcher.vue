@@ -1,7 +1,7 @@
 <template>
   <div class="lang-switcher">
     <nuxt-link
-      class="button--green"
+      class="button--grey"
       v-for="locale in locales"
       v-if="locale.code !== $i18n.locale"
       :to="getSwitchLocaleRoute(locale.code)"

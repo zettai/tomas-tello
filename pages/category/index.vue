@@ -2,22 +2,28 @@
   <section>
     <h2>{{ $t('labels.select_category') }}</h2>
     <div>
-      <nuxt-link
-        :to="getLocalizedRoute({ name: 'category-slug', params: { slug: 'animals' } })"
-        class="button--green">
-        {{ $t('categories.animals') }}
-      </nuxt-link>
-      <nuxt-link
-        :to="getLocalizedRoute({ name: 'category-slug', params: { slug: 'landscapes' } })"
-        class="button--green">
-        {{ $t('categories.landscapes') }}
-      </nuxt-link>
+      <ul class="list ph2 mv0">
+            <li class="item f6" v-for="(item, index) in items" :key="item.id">
+                <div class="title">
+
+                    <nuxt-link
+                    :to="getLocalizedRoute({ name: 'category-slug', params: { slug: index } })"
+                    class="button--green">
+                    {{item.title}}
+                  </nuxt-link>
+                </div>
+            </li>
+        </ul>
     </div>
   </section>
 </template>
 
 <script>
-export default {}
+import { mapState } from "vuex";
+
+export default {
+  computed: mapState(["items"])
+};
 </script>
 
 <style scoped>

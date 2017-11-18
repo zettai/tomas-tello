@@ -1,9 +1,9 @@
 module.exports = {
   labels: {
     home: 'Bienvenidos',
-    about: 'Tomas',
+    about: 'Acerca de',
     back: 'Volver',
-    select_category: 'Elige un album',
+    select_category: 'Albums',
     showing_category: 'Mostrando album',
     see_categories: 'Ver albums'
   },

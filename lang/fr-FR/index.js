@@ -3,9 +3,9 @@ module.exports = {
     home: 'Accueil',
     about: 'À propos',
     back: 'Retour',
-    select_category: 'Selectionnez une catégorie',
-    showing_category: 'Catégorie actuelle: ',
-    see_categories: 'Voir les catégorie'
+    select_category: 'Selectionnez une album',
+    showing_category: 'Album actuelle: ',
+    see_categories: 'Voir les albums'
   },
   categories: {
     animals: 'Animaux',

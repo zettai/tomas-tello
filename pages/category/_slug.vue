@@ -5,25 +5,36 @@
       {{ $t('labels.back') }}
     </nuxt-link>
 
-    <h2>{{ $t('labels.showing_category') }} {{ $t(currentCategoryLabel) }}</h2>
+    <h2>{{ $t('labels.showing_category') }} {{ items[routeSlug()].title }}</h2>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <ul class="list ph2 mv0">
+            <li class="item f6" v-for="(item, index) in items[routeSlug()].songs" :key="item.id">
+
+
+                    {{item.title}}
+
+            </li>
+        </ul>
   </section>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  computed: {
-    currentCategoryLabel () {
-      return `categories.${this.$route.params.slug}`
+  methods: {
+    routeSlug: function () {
+      return this.$route.params.slug
     }
+  },
+  computed: mapState(["items"])
   }
-}
+
+
 </script>
+
+<style>
+section {
+  margin-bottom: 400px;
+}
+</style>
