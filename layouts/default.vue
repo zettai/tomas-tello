@@ -1,131 +1,117 @@
 <template>
-  <div class="container">
-    <header>
-      <nuxt-link
-        :to="getLocalizedRoute('index')"
-        class="button--green">
-        {{ $t('labels.home') }}
-      </nuxt-link>
-      <nuxt-link :to="getLocalizedRoute({ name: 'category' })" class="button--green">
-        {{ $t('labels.see_categories') }}
-      </nuxt-link>
-      <nuxt-link :to="getLocalizedRoute({ name: 'about' })" class="button--green">
-        {{ $t('labels.about') }}
-      </nuxt-link>
-      <LangSwitcher />
+  <div>
+    <header class="Header">
+      <div class="container">
+        <h1 class="Header__Title">Tomas Tello</h1>
+        <nav class="Header__Menu">
+          <nuxt-link class="Header__Link" :to="'/'" exact>
+            {{ $t('links.home') }}
+          </nuxt-link>
+          <nuxt-link class="Header__Link" :to="'/album'" exact>
+            {{ $t('links.album') }}
+          </nuxt-link>
+          <nuxt-link class="Header__Link" :to="'/about'" exact>
+            {{ $t('links.about') }}
+          </nuxt-link>
+          <button class="Header__Link__2" v-if="$i18n.locale === 'en'" v-on:click="changeLocale('es')">{{ $t('links.spanish') }}</button>
+          <button class="Header__Link__2" v-else v-on:click="changeLocale('en')">{{ $t('links.english') }}</button>
+        </nav>
+      </div>
     </header>
     <nuxt/>
   </div>
 </template>
 
 <script>
-import LangSwitcher from "~/components/LangSwitcher";
-import { mapState } from "vuex";
-
 export default {
-  components: {
-    LangSwitcher,
-    computed: mapState(["items"])
+  methods: {
+    changeLocale(val) {
+      return (this.$i18n.locale = val);
+    }
   }
 };
 </script>
 
 <style>
-.container {
-  margin: 0 5%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
 *,
 *:before,
 *:after {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+html,
+body {
+  background-color: #fff;
+  color: #2e2f30;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  height: 100vh;
   margin: 0;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.container {
+  width: 75%;
+  margin: 0 auto;
 }
-
-.button--green:hover {
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.Header {
   color: #fff;
-  background-color: #3b8070;
+  height: 80px;
+  line-height: 80px;
+  background-color: #2e2f30;
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.Header__Title {
+  float: left;
+  font-weight: 300;
+  font-size: 30px;
 }
-
-.button--grey:hover {
+.Header__Menu {
+  float: right;
+}
+.Header__Link {
+  font-size: 16px;
   color: #fff;
-  background-color: #35495e;
+  border: 1px solid #fff;
+  padding: 7px 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px;
 }
-
-header {
+.Header__Link__2 {
+  font-size: 16px;
+  color: #000;
+  border: 1px solid #fff;
+  padding: 7px 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.Header__Link:hover {
+  color: #2e2f30;
+  background-color: #fff;
+}
+.nuxt-link-active {
+  color: cyan;
+}
+.Content {
+  padding: 50px 0;
   text-align: center;
-  display: flex;
-  margin-bottom: auto;
 }
-
-header a {
-  margin: 10px;
-}
-
-section {
-  margin-bottom: auto;
-}
-
-.f6 {
-  font-size: xx-large;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
+.Content__Title {
   font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  padding-bottom: 30px;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+ul {
+  list-style-type: none;
 }
-
-.links {
-  padding-top: 15px;
+.album {
+  font-size: 25px;
 }
 </style>

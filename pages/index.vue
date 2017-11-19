@@ -1,19 +1,11 @@
 <template>
-  <section>
-    <div>
+  <div class="Content">
+    <div class="container">
       <logo/>
-      <h1 class="title">
-        Tomas Tello
-      </h1>
-      <h2 class="subtitle">
-        Andesground
-      </h2>
-      <div class="links">
-        <!-- <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a> -->
-      </div>
+      <h1 class="Content__Title">{{ $t('home.title') }}</h1>
+      <p>{{ $t('home.introduction') }}</p>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -22,10 +14,9 @@ import Logo from "~/components/Logo.vue";
 export default {
   components: {
     Logo
+  },
+  head() {
+    return { title: this.$t("home.title") };
   }
 };
 </script>
-
-<style>
-
-</style>

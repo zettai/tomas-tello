@@ -1,11 +1,17 @@
 <template>
-  <section class="container">
-    <div>
-      <h1>{{ $t('labels.about') }}</h1>
+  <div class="Content">
+    <div class="container">
+      <h1 class="Content__Title">{{ $t('about.title') }}</h1>
+      <p>{{ $t('about.introduction') }}</p>
+      <a href="https://twitter.com/shaolindelamor">shaolindelamor</a>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return { title: this.$t("about.title") };
+  }
+};
 </script>

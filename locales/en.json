@@ -1,0 +1,25 @@
+{
+  "links": {
+    "home": "Home",
+    "about": "About",
+    "english": "English",
+    "spanish": "Spanish",
+    "album": "Album"
+  },
+  "home": {
+    "title": "Tomas Tello",
+    "introduction": "ANDESGROUND"
+  },
+  "about": {
+    "title": "About",
+    "introduction": "You can find Tomas on Twitter."
+  },
+  "labels": {
+    "home": "Homepage",
+    "about": "About",
+    "back": "Back",
+    "select_category": "Album: ",
+    "showing_category": "Album: ",
+    "see_categories": "See albums"
+  }
+}
