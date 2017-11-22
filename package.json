@@ -5,6 +5,8 @@
   "author": "Luis Salas <luisszkl@gmail.com>",
   "private": true,
   "dependencies": {
+    "bulma": "^0.6.1",
+    "font-awesome": "^4.7.0",
     "nuxt": "latest",
     "vue-i18n": "^7.3.2"
   },
@@ -13,5 +15,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6"
   }
 }

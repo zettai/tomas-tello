@@ -1,16 +1,15 @@
 <template>
-  <section>
-    <div class="Content">
+    <section class="section">
     <div class="container">
-    <h2>{{ $t('labels.select_category') }}</h2>
+    <!-- <h2 class=""><strong>{{ $t('labels.select_category') }}</strong></h2><br> -->
     <div>
-      <ul class="list ph2 mv0">
-            <li class="album" v-for="(item, index) in items" :key="item.id">
+      <ul class="">
+            <li class="box" v-for="(item, index) in items" :key="item.id">
                 <div class="title">
 
                     <nuxt-link
                     :to="{ name: 'album-slug', params: { slug: index }}"
-                    class="button--green">
+                    class="">
                     {{item.title}}
                   </nuxt-link>
                 </div>
@@ -18,8 +17,7 @@
         </ul>
     </div>
     </div>
-    </div>
-  </section>
+    </section>
 </template>
 
 <script>

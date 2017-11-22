@@ -1,16 +1,16 @@
 <template>
-  <section>
-<div class="Content">
-    <div class="container">
-    <nuxt-link :to="{ name: 'album' }" class="button--grey">
+  <section class="section">
+                <div class="container">
+
+    <nuxt-link :to="{ name: 'album' }" class="button is-link is-outlined">
       {{ $t('labels.back') }}
     </nuxt-link>
 
-    <h2>{{ $t('labels.showing_category') }} {{ items[routeSlug()].title }}</h2>
+    <h2><strong>{{ $t('labels.showing_category') }}</strong> <span class="title">{{ items[routeSlug()].title }}</span></h2><br>
 
     <ul class="list ph2 mv0">
             <li class="item f6" v-for="(item, index) in items[routeSlug()].songs" :key="item.id">
-                  {{item.title}}
+                  {{item.title}}<br>
             <audio controls>
             <source :src="item.url" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -18,8 +18,9 @@
 
             </li>
         </ul>
-    </div>
-    </div>
+                </div>
+
+
   </section>
 </template>
 
@@ -37,7 +38,5 @@ export default {
 </script>
 
 <style>
-section {
-  margin-bottom: 400px;
-}
+
 </style>
