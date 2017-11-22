@@ -35,7 +35,7 @@
                 <div class="container">
                   <img src="~/static/tt.png" style="float:right; height: 100px;">
                     <h1 class="title">{{ $t('home.title') }}</h1>
-                    <h2 class="subtitle">{{ $t('home.introduction') }}</h2>
+                    <h2 class="subtitle">{{ $t('home.subtitle') }}</h2>
                 </div>
 
             </div>

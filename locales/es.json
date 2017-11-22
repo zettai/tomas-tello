@@ -1,25 +1,23 @@
 {
   "links": {
-    "home": "Entrada",
+    "home": "Inicio",
     "about": "Acerca de",
     "english": "Inglés",
     "spanish": "Español",
-    "album": "Álbum"
+    "album": "Discografía"
   },
   "home": {
     "title": "Tomás Tello",
-    "introduction": "ANDESGROUND"
+    "subtitle": "ANDESGROUND"
   },
-  "about": {
-    "title": "Acerca de",
-    "introduction": "Puedes contactar a Tomás en Twitter."
-  },
-  "labels": {
-    "home": "Entrada",
-    "about": "Acerca de",
+  "albums": {
     "back": "Volver",
     "select_category": "Discos: ",
     "showing_category": "Disco: ",
     "see_categories": "Ver Discos"
-  }
+  },
+  "about": {
+    "title": "Acerca de",
+    "contact": "Puedes contactar a Tomás via: "
+  }  
 }

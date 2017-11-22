@@ -20,7 +20,7 @@ module.exports = {
     { src: "~assets/main.sass", lang: "sass" },
     { src: "font-awesome/scss/font-awesome.scss", lang: "scss" }
   ],
-  loading: { color: "cyan" },
+  loading: { color: "purple" },
   build: {
     vendor: ["vue-i18n"]
   },

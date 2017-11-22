@@ -3,10 +3,10 @@
                 <div class="container">
 
     <nuxt-link :to="{ name: 'album' }" class="button is-link is-outlined">
-      {{ $t('labels.back') }}
+      {{ $t('albums.back') }}
     </nuxt-link>
 
-    <h2><strong>{{ $t('labels.showing_category') }}</strong> <span class="title">{{ items[routeSlug()].title }}</span></h2><br>
+    <h2><strong>{{ $t('albums.showing_category') }}</strong> <span class="title">{{ items[routeSlug()].title }}</span></h2><br>
 
     <ul class="list ph2 mv0">
             <li class="item f6" v-for="(item, index) in items[routeSlug()].songs" :key="item.id">

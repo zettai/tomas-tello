@@ -1,7 +1,6 @@
 <template>
     <section class="section">
     <div class="container">
-    <!-- <h2 class=""><strong>{{ $t('labels.select_category') }}</strong></h2><br> -->
     <div>
       <ul class="">
             <li class="box" v-for="(item, index) in items" :key="item.id">
