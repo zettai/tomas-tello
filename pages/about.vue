@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container">
     <figure class="image is-256x256">
-      <img src="~/static/tomas-tello.png">
+      <img src="~/static/tomas-tello-bio.jpg">
     </figure>
 
     <div class="box">
