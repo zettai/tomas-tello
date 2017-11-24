@@ -1,23 +1,26 @@
 <template>
   <div>
-    <nav class="navbar is-primary">
+    <nav class="navbar is-black">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item is-light" v-if="$i18n.locale === 'en'" v-on:click="changeLocale('es')">
-            <i class="fa fa-language" aria-hidden="true"></i> &nbsp {{ $t('links.spanish') }}
-          </a>
-          <a class="navbar-item is-light " v-else v-on:click="changeLocale('en')">
-            <i class="fa fa-language" aria-hidden="true"></i> &nbsp {{ $t('links.english') }}
-          </a>
-          <div class="navbar-burger burger" data-target="navMenu">
+
+          <div class="navbar-burger burger" data-target="navMenu" v-on:click="toggle()">
             <span></span>
             <span></span>
             <span></span>
           </div>
         </div>
         <div class="navbar-menu" id="navMenu">
+          <div class="navbar-start">
+          <a class="navbar-item" v-if="$i18n.locale === 'en'" v-on:click="changeLocale('es')">
+              <i class="fa fa-language" aria-hidden="true"></i> &nbsp {{ $t('links.spanish') }}
+            </a>
+            <a class="navbar-item" v-else v-on:click="changeLocale('en')">
+              <i class="fa fa-language" aria-hidden="true"></i> &nbsp {{ $t('links.english') }}
+            </a>
+          </div>
           <div class="navbar-end">
-            <nuxt-link class="navbar-item" :to="'/'" exact>
+            <nuxt-link class="navbar-item is-dark" :to="'/'" exact>
               {{ $t('links.home') }}
             </nuxt-link>
             <nuxt-link class="navbar-item" :to="'/album'" exact>
@@ -50,31 +53,16 @@
 export default {
   methods: {
     changeLocale(val) {
-      return (this.$i18n.locale = val);
+      this.$i18n.locale = val;
+    },
+    toggle() {
+      document.querySelector(".navbar-burger").classList.toggle("is-active");
+      document.querySelector(".navbar-menu").classList.toggle("is-active");
     }
   },
   mounted: function() {
-    this.$nextTick(function() {
-      var $navbarBurgers = Array.prototype.slice.call(
-        document.querySelectorAll(".navbar-burger"),
-        0
-      );
-      // Check if there are any navbar burgers
-      if ($navbarBurgers.length > 0) {
-        // Add a click event on each of them
-        $navbarBurgers.forEach(function($el) {
-          $el.addEventListener("click", function() {
-            // Get the target from the "data-target" attribute
-            var target = $el.dataset.target;
-            var $target = document.getElementById(target);
-
-            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-            $el.classList.toggle("is-active");
-            $target.classList.toggle("is-active");
-          });
-        });
-      }
-    });
+    this.$i18n.locale = "";
+    this.$i18n.locale = "en";
   }
 };
 </script>
