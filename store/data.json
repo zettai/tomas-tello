@@ -1,173 +1,169 @@
 [
   {
-    "albums": [
+    "id": "01",
+    "title": "hantukaray suni",
+    "artist": "tomas tello",
+    "disabled": "false",
+    "year": "2010",
+    "songs": [
       {
         "id": "01",
-        "title": "hantukaray suni",
-        "artist": "tomas tello",
-        "disabled": "false",
-        "year": "2010",
-        "songs": [
-          {
-            "id": "01",
-            "title": "meseta de madrugada",
-            "url": "https://tomas-tello.netlify.com/01-mesetademadrugada.mp3"
-          },
-          {
-            "id": "02",
-            "title": "niños",
-            "url": "https://tomas-tello.netlify.com/02-niños.mp3"
-          },
-          {
-            "id": "03",
-            "title": "flautista al lado del rio (pisqueras)",
-            "url":
-              "https://tomas-tello.netlify.com/03-flautistaalladodelrio(pisqueras).mp3"
-          },
-          {
-            "id": "04",
-            "title": "de la toma a la laguna",
-            "url": "https://tomas-tello.netlify.com/04-delatomaalalaguna.mp3"
-          },
-          {
-            "id": "05",
-            "title": "de nuevo los niños",
-            "url": "https://tomas-tello.netlify.com/05-denuevolosniños.mp3"
-          },
-          {
-            "id": "06",
-            "title": "inti",
-            "url": "https://tomas-tello.netlify.com/06-inti.mp3"
-          },
-          {
-            "id": "07",
-            "title": "tormenta",
-            "url": "https://tomas-tello.netlify.com/07-tormenta.mp3"
-          },
-          {
-            "id": "08",
-            "title": "saqra",
-            "url": "https://tomas-tello.netlify.com/08-saqra.mp3"
-          },
-          {
-            "id": "09",
-            "title": "llankay",
-            "url": "https://tomas-tello.netlify.com/09-llank'ay.mp3"
-          }
-        ]
+        "title": "meseta de madrugada",
+        "url": "https://tomas-tello.netlify.com/01-mesetademadrugada.mp3"
       },
       {
         "id": "02",
-        "title": "shaolines del amor",
-        "artist": "shaolines del amor",
-        "disabled": "false",
-        "year": "2008",
-        "songs": [
-          {
-            "id": "01",
-            "title": "la guardiana de las ondas radiales 1",
-            "url":
-              "https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
-          },
-          {
-            "id": "02",
-            "title": "la guardiana de las ondas radiales 1",
-            "url":
-              "https://tomas-tello.netlify.com/02-laGuardianaDeLasOndasRadiales2.mp3"
-          },
-          {
-            "id": "03",
-            "title": "shaolines del amor 1",
-            "url": "https://tomas-tello.netlify.com/03-shaolinesdelamor1.mp3"
-          },
-          {
-            "id": "04",
-            "title": "cerrando el concierto - shaolines",
-            "url":
-              "https://tomas-tello.netlify.com/04-cerrando_el_conciertoshaolines.mp3"
-          }
-        ]
+        "title": "niños",
+        "url": "https://tomas-tello.netlify.com/02-niños.mp3"
       },
       {
         "id": "03",
-        "title": "servinakuy",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "2009",
-        "songs": []
+        "title": "flautista al lado del rio (pisqueras)",
+        "url":
+          "https://tomas-tello.netlify.com/03-flautistaalladodelrio(pisqueras).mp3"
       },
       {
         "id": "04",
-        "title": "hilos de oro",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "2009",
-        "songs": []
+        "title": "de la toma a la laguna",
+        "url": "https://tomas-tello.netlify.com/04-delatomaalalaguna.mp3"
       },
       {
         "id": "05",
-        "title": "yacu",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "2010",
-        "songs": []
+        "title": "de nuevo los niños",
+        "url": "https://tomas-tello.netlify.com/05-denuevolosniños.mp3"
       },
       {
         "id": "06",
-        "title": "Puchqu",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "2010",
-        "songs": []
+        "title": "inti",
+        "url": "https://tomas-tello.netlify.com/06-inti.mp3"
       },
       {
         "id": "07",
-        "title": "mesetas y valles",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "2010",
-        "songs": []
+        "title": "tormenta",
+        "url": "https://tomas-tello.netlify.com/07-tormenta.mp3"
       },
       {
         "id": "08",
-        "title": "dumno - namatos",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "2010",
-        "songs": []
+        "title": "saqra",
+        "url": "https://tomas-tello.netlify.com/08-saqra.mp3"
       },
       {
         "id": "09",
-        "title": "kunan",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "20011",
-        "songs": []
-      },
-      {
-        "id": "10",
-        "title": "suni",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "2011",
-        "songs": []
-      },
-      {
-        "id": "11",
-        "title": "ruqyay",
-        "artist": "tomas tello",
-        "disabled": "true",
-        "year": "2011",
-        "songs": []
-      },
-      {
-        "id": "12",
-        "title": "labor",
-        "artist": "tomas tello with E.T",
-        "disabled": "true",
-        "year": "2012",
-        "songs": []
+        "title": "llankay",
+        "url": "https://tomas-tello.netlify.com/09-llank'ay.mp3"
       }
     ]
+  },
+  {
+    "id": "02",
+    "title": "shaolines del amor",
+    "artist": "shaolines del amor",
+    "disabled": "false",
+    "year": "2008",
+    "songs": [
+      {
+        "id": "01",
+        "title": "la guardiana de las ondas radiales 1",
+        "url":
+          "https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
+      },
+      {
+        "id": "02",
+        "title": "la guardiana de las ondas radiales 1",
+        "url":
+          "https://tomas-tello.netlify.com/02-laGuardianaDeLasOndasRadiales2.mp3"
+      },
+      {
+        "id": "03",
+        "title": "shaolines del amor 1",
+        "url": "https://tomas-tello.netlify.com/03-shaolinesdelamor1.mp3"
+      },
+      {
+        "id": "04",
+        "title": "cerrando el concierto - shaolines",
+        "url":
+          "https://tomas-tello.netlify.com/04-cerrando_el_conciertoshaolines.mp3"
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "title": "servinakuy",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "2009",
+    "songs": []
+  },
+  {
+    "id": "04",
+    "title": "hilos de oro",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "2009",
+    "songs": []
+  },
+  {
+    "id": "05",
+    "title": "yacu",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "2010",
+    "songs": []
+  },
+  {
+    "id": "06",
+    "title": "Puchqu",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "2010",
+    "songs": []
+  },
+  {
+    "id": "07",
+    "title": "mesetas y valles",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "2010",
+    "songs": []
+  },
+  {
+    "id": "08",
+    "title": "dumno - namatos",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "2010",
+    "songs": []
+  },
+  {
+    "id": "09",
+    "title": "kunan",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "20011",
+    "songs": []
+  },
+  {
+    "id": "10",
+    "title": "suni",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "2011",
+    "songs": []
+  },
+  {
+    "id": "11",
+    "title": "ruqyay",
+    "artist": "tomas tello",
+    "disabled": "true",
+    "year": "2011",
+    "songs": []
+  },
+  {
+    "id": "12",
+    "title": "labor",
+    "artist": "tomas tello with E.T",
+    "disabled": "true",
+    "year": "2012",
+    "songs": []
   }
 ]
