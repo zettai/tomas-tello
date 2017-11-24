@@ -4,7 +4,7 @@
       <div class="columns is-multiline">
         <div class="column is-one-quarter card box" v-for="(item, index) in images" :key="item.id">
           <figure class="image">
-            <img :src="item.url">
+            <img :src="item.smallurl">
           </figure>
           <nuxt-link tag="button" :to="{ name: 'images-slug', params: { slug: index }}" class="button is-primary is-outlined is-small">
                {{ $t('images.view') }}
