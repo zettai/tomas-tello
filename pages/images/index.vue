@@ -10,7 +10,7 @@
                {{ $t('images.view') }}
               </nuxt-link>
           <div class="media-content is-pulled-right">
-            <p class="subtitle is-6">{{ $t('images.by') }}: {{item.author}}</p>
+            <p class="subtitle is-7">{{ $t('images.by') }}: {{item.author}}</p>
           </div>
         </div>
       </div>
