@@ -3,7 +3,12 @@
     <nav class="navbar is-primary">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item has-text-weight-bold" href="#"></a>
+          <a class="navbar-item is-light" v-if="$i18n.locale === 'en'" v-on:click="changeLocale('es')">
+            <i class="fa fa-language" aria-hidden="true"></i> &nbsp {{ $t('links.spanish') }}
+          </a>
+          <a class="navbar-item is-light " v-else v-on:click="changeLocale('en')">
+            <i class="fa fa-language" aria-hidden="true"></i> &nbsp {{ $t('links.english') }}
+          </a>
           <div class="navbar-burger burger" data-target="navMenu">
             <span></span>
             <span></span>
@@ -21,12 +26,6 @@
             <nuxt-link class="navbar-item" :to="'/about'" exact>
               {{ $t('links.about') }}
             </nuxt-link>
-            <a class="navbar-item" v-if="$i18n.locale === 'en'" v-on:click="changeLocale('es')">{{ $t('links.spanish') }} &nbsp
-              <i class="fa fa-language" aria-hidden="true"></i>
-            </a>
-            <a class="navbar-item" v-else v-on:click="changeLocale('en')">{{ $t('links.english') }} &nbsp
-              <i class="fa fa-language" aria-hidden="true"></i>
-            </a>
           </div>
         </div>
       </div>
@@ -34,7 +33,7 @@
     <section class="hero is-dark">
       <div class="hero-body">
         <div class="container">
-          <img src="~/static/tomas-tello-logo.png" style="float:right; height: 100px;">
+          <img src="~/static/tomas-tello-logo.png" style="float: right; height: 100px;">
           <h1 class="title">{{ $t('home.title') }}</h1>
           <h2 class="subtitle">{{ $t('home.subtitle') }}</h2>
         </div>
@@ -48,24 +47,6 @@
 export default {
   methods: {
     changeLocale(val) {
-      var $navbarBurgers = Array.prototype.slice.call(
-        document.querySelectorAll(".navbar-burger"),
-        0
-      );
-      // Check if there are any navbar burgers
-      if ($navbarBurgers.length > 0) {
-        // Add a click event on each of them
-        $navbarBurgers.forEach(function($el) {
-          // Get the target from the "data-target" attribute
-          var target = $el.dataset.target;
-          var $target = document.getElementById(target);
-
-          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-          $el.classList.toggle("is-active");
-          $target.classList.toggle("is-active");
-        });
-      }
-
       return (this.$i18n.locale = val);
     }
   },
