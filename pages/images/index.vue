@@ -1,14 +1,18 @@
 <template>
   <section class="section">
-    <div class="container">
-      <div>
-        <ul>
-          <li class="box" v-for="(item, index) in images" :key="item.id">
-            <figure class="image is-64-64">
-              <img :src="item.url">
-            </figure>
-          </li>
-        </ul>
+    <div class="container is-fluid">
+      <div class="columns is-multiline">
+        <div class="column is-one-quarter card box" v-for="(item, index) in images" :key="item.id">
+          <figure class="image">
+            <img :src="item.url">
+          </figure>
+          <nuxt-link tag="button" :to="{ name: 'images-slug', params: { slug: index }}" class="button is-primary is-outlined is-small">
+               {{ $t('images.view') }}
+              </nuxt-link>
+          <div class="media-content is-pulled-right">
+            <p class="subtitle is-6">{{ $t('images.by') }}: {{item.author}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -28,3 +32,7 @@ export default {
   }
 };
 </script>
+
+<style>
+
+</style>

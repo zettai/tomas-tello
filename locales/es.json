@@ -17,6 +17,10 @@
     "showing_category": "Disco: ",
     "see_categories": "Ver Discos"
   },
+  "images": {
+    "by": "foto",
+    "view": "ver"
+  },
   "about": {
     "title": "Acerca de",
     "about": "Bio",

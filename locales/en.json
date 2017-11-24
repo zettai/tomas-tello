@@ -17,6 +17,10 @@
     "showing_category": "Album: ",
     "see_categories": "See albums"
   },
+  "images": {
+    "by": "by",
+    "view": "view"
+  },
   "about": {
     "title": "About",
     "about": "Bio",
