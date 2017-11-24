@@ -1,16 +1,14 @@
 <template>
   <section class="section">
     <div class="container">
-      <div class="box">
-        <nuxt-link :to="{ name: 'images' }" class="button">
-          {{ $t('albums.back') }}
-        </nuxt-link>
-        <figure class="image">
-          <img :src="images[routeSlug()].url">
-        </figure>
-        <div class="media-content is-pulled-right">
-          <p class="subtitle is-6">{{ $t('images.by') }}: {{images[routeSlug()].author}}</p>
-        </div>
+      <nuxt-link :to="{ name: 'images' }" class="button is-dark is-outlined">
+        {{ $t('albums.back') }}
+      </nuxt-link>
+      <figure class="image">
+        <img :src="images[routeSlug()].url">
+      </figure>
+      <div class="media-content is-pulled-right">
+        <p class="subtitle is-6">{{ $t('images.by') }}: {{images[routeSlug()].author}}</p>
       </div>
     </div>
   </section>

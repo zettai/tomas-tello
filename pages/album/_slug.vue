@@ -5,6 +5,7 @@
       <nuxt-link :to="{ name: 'album' }" class="button is-dark is-outlined">
         {{ $t('albums.back') }}
       </nuxt-link>
+      <br>
 
       <h2>
         <strong>{{ $t('albums.showing_category') }}</strong>

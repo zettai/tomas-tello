@@ -1,8 +1,8 @@
 <template>
   <section class="section">
     <div class="container is-fluid">
-      <div class="columns is-multiline">
-        <div class="column is-one-quarter card box" v-for="(item, index) in images" :key="item.id">
+      <div class="columns is-8 is-multiline">
+        <div class="column is-one-fifth " v-for="(item, index) in images" :key="item.id">
           <figure class="image">
             <img :src="item.smallurl">
           </figure>
