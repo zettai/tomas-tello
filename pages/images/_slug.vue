@@ -1,7 +1,8 @@
 <template>
   <section class="section">
     <div class="container">
-      <nuxt-link :to="{ name: 'images' }" class="button is-dark is-outlined">
+      <nuxt-link :to="{ name: 'images' }"
+                 class="button is-dark is-outlined">
         {{ $t('albums.back') }}
       </nuxt-link>
       <figure class="image">

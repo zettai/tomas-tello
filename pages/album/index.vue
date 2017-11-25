@@ -3,8 +3,12 @@
     <div class="container">
       <div>
         <ul>
-          <li v-for="(item, index) in items" :key="item.id">
-            <nuxt-link tag="button" :to="{ name: 'album-slug', params: { slug: index }}" class="button box is-dark is-outlined is-large" :disabled="item.disabled == 'true'">
+          <li v-for="(item, index) in items"
+              :key="item.id">
+            <nuxt-link tag="button"
+                       :to="{ name: 'album-slug', params: { slug: index }}"
+                       class="button box is-dark is-outlined is-large"
+                       :disabled="item.disabled == 'true'">
               {{item.title | capitalize}} - ({{item.year}})
             </nuxt-link><br>
           </li>
@@ -29,6 +33,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 
 </style>
