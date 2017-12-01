@@ -2,8 +2,7 @@
   <section class="section">
     <div class="container">
 
-      <nuxt-link :to="{ name: 'album' }"
-                 class="button is-dark is-outlined">
+      <nuxt-link :to="{ name: 'album' }" class="button is-dark is-outlined">
         {{ $t('albums.back') }}
       </nuxt-link>
       <br>
@@ -15,14 +14,11 @@
       <br>
 
       <ul class="list ph2 mv0">
-        <li class="item f6"
-            v-for="(item, index) in items[routeSlug()].songs"
-            :key="item.id">
+        <li class="item f6" v-for="(item, index) in items[routeSlug()].songs" :key="item.id">
           {{item.title | capitalize}}
           <br>
           <audio controls>
-            <source :src="item.url"
-                    type="audio/mpeg"> Your browser does not support the audio element.
+            <source :src="item.url" type="audio/mpeg"> Your browser does not support the audio element.
           </audio>
         </li>
       </ul>

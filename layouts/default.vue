@@ -12,10 +12,12 @@
         <div class="navbar-menu" id="navMenu">
           <div class="navbar-start">
             <a class="navbar-item" v-if="$i18n.locale === 'en'" v-on:click="changeLocale('es')">
-              <i class="fa fa-language" aria-hidden="true"></i> &nbsp {{ $t('links.spanish') }}
+              <i class="fa fa-language" aria-hidden="true"></i> &nbsp
+              <div class="glitch-text" :data-text="$t('links.spanish')">{{ $t('links.spanish') }}</div>
             </a>
             <a class="navbar-item" v-else v-on:click="changeLocale('en')">
-              <i class="fa fa-language" aria-hidden="true"></i> &nbsp {{ $t('links.english') }}
+              <i class="fa fa-language" aria-hidden="true"></i> &nbsp
+              <div class="glitch-text" :data-text="$t('links.english')">{{ $t('links.english') }}</div>
             </a>
           </div>
           <div class="navbar-end">
@@ -68,7 +70,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* Base */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 body {
@@ -170,5 +172,56 @@ h2 {
 .delay-200.fo-mask:after {
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
+}
+
+@mixin textGlitch($name, $intensity, $textColor, $background, $highlightColor1, $highlightColor2, $width, $height) {
+  color: $textColor;
+  position: relative;
+  $steps: $intensity;
+
+  // Ensure the @keyframes are generated at the root level
+  @at-root {
+    // We need two different ones
+    @for $i from 1 through 2 {
+      @keyframes #{$name}-anim-#{$i} {
+        @for $i from 0 through $steps {
+          #{percentage($i*(1/$steps))} {
+            clip: rect(random($height)+px, $width+px, random($height)+px, 0);
+          }
+        }
+      }
+    }
+  }
+  &:before,
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $background;
+    clip: rect(0, 0, 0, 0);
+  }
+  &:after {
+    left: 2px;
+    text-shadow: -1px 0 $highlightColor1;
+    animation: #{$name}-anim-1 2s infinite linear alternate-reverse;
+  }
+  &:before {
+    left: -2px;
+    text-shadow: 2px 0 $highlightColor2;
+    animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
+  }
+}
+
+.glitch-text {
+  font-size: 1.2em;
+  @include textGlitch("textGlitch", 17, white, black, red, blue, 450, 115);
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: black;
 }
 </style>
