@@ -13,11 +13,11 @@
           <div class="navbar-start">
             <a class="navbar-item" v-if="$i18n.locale === 'en'" v-on:click="changeLocale('es')">
               <i class="fa fa-language" aria-hidden="true"></i> &nbsp
-              <div class="glitch-text" :data-text="$t('links.spanish')">{{ $t('links.spanish') }}</div>
+              <div v-bind:class="{ 'glitch-text': !isActive }" :data-text="$t('links.spanish')">{{ $t('links.spanish') }}</div>
             </a>
             <a class="navbar-item" v-else v-on:click="changeLocale('en')">
               <i class="fa fa-language" aria-hidden="true"></i> &nbsp
-              <div class="glitch-text" :data-text="$t('links.english')">{{ $t('links.english') }}</div>
+              <div v-bind:class="{ 'glitch-text': !isActive }" :data-text="$t('links.english')">{{ $t('links.english') }}</div>
             </a>
           </div>
           <div class="navbar-end">
@@ -54,6 +54,11 @@
 
 <script>
 export default {
+  data: function() {
+    return {
+      isActive: null
+    };
+  },
   methods: {
     changeLocale(val) {
       this.$i18n.locale = val;
@@ -61,11 +66,25 @@ export default {
     toggle() {
       document.querySelector(".navbar-burger").classList.toggle("is-active");
       document.querySelector(".navbar-menu").classList.toggle("is-active");
+      if (
+        document.querySelector(".navbar-burger").classList.contains("is-active")
+      ) {
+        this.isActive = true;
+      } else {
+        this.isActive = false;
+      }
     }
   },
   mounted: function() {
     this.$i18n.locale = "";
     this.$i18n.locale = "en";
+    if (
+      document.querySelector(".navbar-burger").classList.contains("is-active")
+    ) {
+      this.isActive = true;
+    } else {
+      this.isActive = false;
+    }
   }
 };
 </script>
@@ -223,5 +242,9 @@ body {
   margin: 0;
   font-family: sans-serif;
   background-color: black;
+}
+
+.navbar.is-black .navbar-end > a.navbar-item:hover {
+  background-color: grey;
 }
 </style>
