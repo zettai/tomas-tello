@@ -88,7 +88,7 @@ h2 {
 }
 
 h1 {
-  font-size: 7vw;
+  font-size: 5vw;
 }
 
 h2 {
