@@ -19,18 +19,18 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 
 export default {
-  computed: mapState(["items"]),
+  computed: mapState(['items']),
   filters: {
-    capitalize: function(value) {
-      if (!value) return "";
-      value = value.toString();
-      return value.charAt(0).toUpperCase() + value.slice(1);
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
     }
   }
-};
+}
 </script>
 
 <style>

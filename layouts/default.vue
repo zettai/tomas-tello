@@ -54,39 +54,39 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       isActive: null
-    };
+    }
   },
   methods: {
-    changeLocale(val) {
-      this.$i18n.locale = val;
+    changeLocale (val) {
+      this.$i18n.locale = val
     },
-    toggle() {
-      document.querySelector(".navbar-burger").classList.toggle("is-active");
-      document.querySelector(".navbar-menu").classList.toggle("is-active");
+    toggle () {
+      document.querySelector('.navbar-burger').classList.toggle('is-active')
+      document.querySelector('.navbar-menu').classList.toggle('is-active')
       if (
-        document.querySelector(".navbar-burger").classList.contains("is-active")
+        document.querySelector('.navbar-burger').classList.contains('is-active')
       ) {
-        this.isActive = true;
+        this.isActive = true
       } else {
-        this.isActive = false;
+        this.isActive = false
       }
     }
   },
-  mounted: function() {
-    this.$i18n.locale = "";
-    this.$i18n.locale = "en";
+  mounted: function () {
+    this.$i18n.locale = ''
+    this.$i18n.locale = 'en'
     if (
-      document.querySelector(".navbar-burger").classList.contains("is-active")
+      document.querySelector('.navbar-burger').classList.contains('is-active')
     ) {
-      this.isActive = true;
+      this.isActive = true
     } else {
-      this.isActive = false;
+      this.isActive = false
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

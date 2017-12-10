@@ -28,23 +28,23 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 
 export default {
   methods: {
-    routeSlug: function() {
-      return this.$route.params.slug;
+    routeSlug: function () {
+      return this.$route.params.slug
     }
   },
-  computed: mapState(["items"]),
+  computed: mapState(['items']),
   filters: {
-    capitalize: function(value) {
-      if (!value) return "";
-      value = value.toString();
-      return value.charAt(0).toUpperCase() + value.slice(1);
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
     }
   }
-};
+}
 </script>
 
 <style>

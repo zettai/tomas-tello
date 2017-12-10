@@ -8,8 +8,8 @@
 
 <script>
 export default {
-  head() {
-    return { title: this.$t("home.title") };
+  head () {
+    return { title: this.$t('home.title') }
   }
-};
+}
 </script>
