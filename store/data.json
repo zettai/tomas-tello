@@ -1,169 +1,68 @@
 [
   {
     "id": "01",
-    "title": "hantukaray suni",
-    "artist": "tomas tello",
-    "disabled": "false",
-    "year": "2010",
-    "songs": [
-      {
-        "id": "01",
-        "title": "meseta de madrugada",
-        "url": "https://tomas-tello.netlify.com/01-mesetademadrugada.mp3"
-      },
-      {
-        "id": "02",
-        "title": "niños",
-        "url": "https://tomas-tello.netlify.com/02-niños.mp3"
-      },
-      {
-        "id": "03",
-        "title": "flautista al lado del rio (pisqueras)",
-        "url":
-          "https://tomas-tello.netlify.com/03-flautistaalladodelrio(pisqueras).mp3"
-      },
-      {
-        "id": "04",
-        "title": "de la toma a la laguna",
-        "url": "https://tomas-tello.netlify.com/04-delatomaalalaguna.mp3"
-      },
-      {
-        "id": "05",
-        "title": "de nuevo los niños",
-        "url": "https://tomas-tello.netlify.com/05-denuevolosniños.mp3"
-      },
-      {
-        "id": "06",
-        "title": "inti",
-        "url": "https://tomas-tello.netlify.com/06-inti.mp3"
-      },
-      {
-        "id": "07",
-        "title": "tormenta",
-        "url": "https://tomas-tello.netlify.com/07-tormenta.mp3"
-      },
-      {
-        "id": "08",
-        "title": "saqra",
-        "url": "https://tomas-tello.netlify.com/08-saqra.mp3"
-      },
-      {
-        "id": "09",
-        "title": "llankay",
-        "url": "https://tomas-tello.netlify.com/09-llank'ay.mp3"
-      }
-    ]
+    "title": "(-)    Su encuentro con el infinito",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/(-)    Su encuentro con el infinito.mp3"
   },
   {
     "id": "02",
-    "title": "shaolines del amor",
-    "artist": "shaolines del amor",
-    "disabled": "false",
-    "year": "2008",
-    "songs": [
-      {
-        "id": "01",
-        "title": "la guardiana de las ondas radiales 1",
-        "url":
-          "https://tomas-tello.netlify.com/01-laGuardianaDeLasOndasRadiales1.mp3"
-      },
-      {
-        "id": "02",
-        "title": "la guardiana de las ondas radiales 1",
-        "url":
-          "https://tomas-tello.netlify.com/02-laGuardianaDeLasOndasRadiales2.mp3"
-      },
-      {
-        "id": "03",
-        "title": "shaolines del amor 1",
-        "url": "https://tomas-tello.netlify.com/03-shaolinesdelamor1.mp3"
-      },
-      {
-        "id": "04",
-        "title": "cerrando el concierto - shaolines",
-        "url":
-          "https://tomas-tello.netlify.com/04-cerrando_el_conciertoshaolines.mp3"
-      }
-    ]
+    "title": "(-)   Brussels Nord (Field Recording)",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/(-)   Brussels Nord (Field Recording).mp3"
   },
   {
     "id": "03",
-    "title": "servinakuy",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "2009",
-    "songs": []
+    "title": "(-)   Yuko  ",
+    "url":
+      "https://luisszkl.bitbucket.io/tomas-tello/audio/(-)   Yuko  .mp3"
   },
   {
     "id": "04",
-    "title": "hilos de oro",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "2009",
-    "songs": []
+    "title": "(-) Kononito 2",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/(-) Kononito 2.mp3"
   },
   {
     "id": "05",
-    "title": "yacu",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "2010",
-    "songs": []
+    "title": "(-) Live @ Bhubaneshwar (31-10-15) session with Matsuo Kunihiko",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/(-) Live @ Bhubaneshwar (31-10-15) session with Matsuo Kunihiko.mp3"
   },
   {
     "id": "06",
-    "title": "Puchqu",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "2010",
-    "songs": []
+    "title": "(-) Una linda plantita creciendo ",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/(-) Una linda plantita creciendo .mp3"
   },
   {
     "id": "07",
-    "title": "mesetas y valles",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "2010",
-    "songs": []
+    "title": "2013-12-14 E T live at Exit07",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/2013-12-14 E T live at Exit07.mp3"
   },
   {
     "id": "08",
-    "title": "dumno - namatos",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "2010",
-    "songs": []
+    "title": "Amanecer en Ikoma",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/Amanecer en Ikoma.mp3"
   },
   {
     "id": "09",
-    "title": "kunan",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "20011",
-    "songs": []
+    "title": "Electric storm -  2 radios -  3 cameras - train ",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/Electric storm -  2 radios -  3 cameras - train .mp3"
   },
   {
     "id": "10",
-    "title": "suni",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "2011",
-    "songs": []
+    "title": "Ensayo de los flautistas plateados",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/Ensayo de los flautistas plateados.mp3"
   },
   {
     "id": "11",
-    "title": "ruqyay",
-    "artist": "tomas tello",
-    "disabled": "true",
-    "year": "2011",
-    "songs": []
+    "title": "Cumbia para Yuko (El Palteado 2)",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/Tomás Tello - Cumbia para Yuko (El Palteado 2).mp3"
   },
   {
     "id": "12",
-    "title": "labor",
-    "artist": "tomas tello with E.T",
-    "disabled": "true",
-    "year": "2012",
-    "songs": []
+    "title": "Danza Elegante 2",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/Tomás Tello - Danza Elegante 2.mp3"
+  },
+  {
+    "id": "13",
+    "title": "Los Dibujantes de las Lineas de Nazca",
+    "url": "https://luisszkl.bitbucket.io/tomas-tello/audio/Tomás Tello - Los Dibujantes de las Lineas de Nazca.mp3"
   }
 ]

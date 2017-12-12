@@ -3,14 +3,12 @@
     <div class="container">
       <div>
         <ul>
-          <li v-for="(item, index) in items"
-              :key="item.id">
-            <nuxt-link tag="button"
-                       :to="{ name: 'album-slug', params: { slug: index }}"
-                       class="button box is-dark is-outlined is-large"
-                       :disabled="item.disabled == 'true'">
-              {{item.title | capitalize}} - ({{item.year}})
-            </nuxt-link><br>
+          <li class="item f6" v-for="(item, index) in items" :key="item.id">
+            <span>{{ item.title | capitalize}}</span><br>
+            <audio controls>
+              <source :src="item.url" type="audio/mpeg"> Your browser does not support the audio element.
+            </audio>
+            <br>
           </li>
         </ul>
       </div>
