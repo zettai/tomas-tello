@@ -8,9 +8,9 @@
       <figure class="image">
         <img :src="images[routeSlug()].url">
       </figure>
-      <div class="media-content is-pulled-right">
+      <!-- <div class="media-content is-pulled-right">
         <p class="subtitle is-6">{{ $t('images.by') }}: {{images[routeSlug()].author}}</p>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
