@@ -26,6 +26,6 @@ module.exports = {
   },
   plugins: ['~/plugins/i18n.js'],
   generate: {
-    routes: ['/album/0', '/album/1']
+    routes: []
   }
 }
