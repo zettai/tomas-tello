@@ -2,15 +2,11 @@
   <section class="section">
     <div class="container is-fluid">
       <div class="columns is-8 is-multiline">
-        <div class="column is-one-fifth "
-             v-for="(item, index) in images"
-             :key="item.id">
+        <div class="column is-one-fifth " v-for="(item, index) in images" :key="item.id">
           <figure class="image">
             <img :src="item.smallurl">
           </figure>
-          <nuxt-link tag="button"
-                     :to="{ name: 'images-slug', params: { slug: index }}"
-                     class="button is-primary is-outlined is-small">
+          <nuxt-link tag="button" :to="{ name: 'images-slug', params: { slug: index }}" class="button is-primary is-outlined is-small">
             {{ $t('images.view') }}
           </nuxt-link>
           <!-- <div class="media-content is-pulled-right">

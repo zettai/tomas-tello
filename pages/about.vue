@@ -13,8 +13,7 @@
         <div class="column">
           <div class="box">
             <p>{{ $t('about.twitter') }}
-              <a class="button is-info is-outlined"
-                 href="https://twitter.com/shaolindelamor">
+              <a class="button is-info is-outlined" href="https://twitter.com/shaolindelamor">
                 <span class="icon">
                   <i class="fa fa-twitter"></i>
                 </span>
@@ -23,8 +22,7 @@
             </p>
             <br>
             <p>{{ $t('about.support') }}
-              <a class="button is-link is-outlined"
-                 href="https://www.paypal.me/shaolindelamor">
+              <a class="button is-link is-outlined" href="https://www.paypal.me/shaolindelamor">
                 <span class="icon">
                   <i class="fa fa-paypal"></i>
                 </span>

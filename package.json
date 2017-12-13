@@ -17,14 +17,18 @@
     "generate": "nuxt generate"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
     "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "eslint": "^3.19.0",
-    "eslint-friendly-formatter": "^2.0.7",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-html": "^2.0.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1"
+    "sass-loader": "^6.0.6"
   }
 }
