@@ -1,11 +1,13 @@
 import data from './data.json'
 import images from './images.json'
+import videos from './video.json'
 
 export const state = () => ({
   locales: ['en', 'fr'],
   locale: 'en',
   items: data,
-  images: images
+  images: images,
+  videos: videos
 })
 
 export const mutations = {

@@ -27,6 +27,9 @@
             <nuxt-link class="navbar-item" :to="'/album'" exact>
               {{ $t('links.album') }}
             </nuxt-link>
+            <nuxt-link class="navbar-item" :to="'/video'" exact>
+              {{ $t('links.video') }}
+            </nuxt-link>
             <nuxt-link class="navbar-item" :to="'/images'" exact>
               {{ $t('links.images') }}
             </nuxt-link>
