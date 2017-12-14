@@ -9,9 +9,6 @@
           <nuxt-link tag="button" :to="{ name: 'images-slug', params: { slug: index }}" class="button is-primary is-outlined is-small">
             {{ $t('images.view') }}
           </nuxt-link>
-          <!-- <div class="media-content is-pulled-right">
-            <p class="subtitle is-7">{{ $t('images.by') }}: {{item.author}}</p>
-          </div> -->
         </div>
       </div>
     </div>

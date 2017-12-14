@@ -6,8 +6,11 @@
     "spanish": "Español",
     "album": "Música",
     "images": "Imágenes",
-    "video": "Vídeo"
+    "video": "Vídeo",
+    "press": "Prensa"
   },
+  "download": "Descarga",
+  "language": "Idioma",
   "home": {
     "title": "Tomás Tello",
     "subtitle": "ANDESGROUND"

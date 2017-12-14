@@ -33,6 +33,9 @@
             <nuxt-link class="navbar-item" :to="'/images'" exact>
               {{ $t('links.images') }}
             </nuxt-link>
+            <nuxt-link class="navbar-item" :to="'/press'" exact>
+              {{ $t('links.press') }}
+            </nuxt-link>
             <nuxt-link class="navbar-item" :to="'/about'" exact>
               {{ $t('links.about') }}
             </nuxt-link>
