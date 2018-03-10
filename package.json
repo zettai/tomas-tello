@@ -7,7 +7,7 @@
   "dependencies": {
     "bulma": "^0.6.1",
     "font-awesome": "^4.7.0",
-    "nuxt": "latest",
+    "nuxt": "^1.4.0",
     "vue-i18n": "^7.3.2"
   },
   "config": {
