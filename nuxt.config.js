@@ -1,31 +1,55 @@
+const config = require('./.contentful.json')
+
 module.exports = {
+  /*
+  ** Headers of the page
+  */
   head: {
-    title: 'Tomas Tello',
+    title: 'wip',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Tomas Tello Music Site'
+        content: 'Nuxt.js + Vuetify.js project'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      }
+    ]
   },
-  /*
-  ** Include css not in components
-  */
-  css: [
-    // node.js module but we specify the pre-processor
-    { src: '~assets/main.sass', lang: 'sass' },
-    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
+  router: {
+    middleware: 'i18n'
+  },
+  plugins: [
+    '~/plugins/vuetify.js',
+    '~/plugins/i18n.js',
+    '~/plugins/contentful.js',
+    '~/plugins/vue-js-modal.js',
+    '~/plugins/global.js'
   ],
-  loading: { color: 'purple' },
+  css: ['~/assets/style/app.styl'],
+  /*
+  ** Customize the progress bar color
+  */
+  loading: { color: '#3B8070' },
+  /*
+  ** Build configuration
+  */
   build: {
-    vendor: ['vue-i18n']
+    vendor: ['~/plugins/vuetify.js', 'vue-i18n']
   },
-  plugins: ['~/plugins/i18n.js'],
   generate: {
-    routes: []
+    routes: ['/', '/en', '/about', '/en/about'] // these routes will be pre-rendered on build
+  },
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
   }
 }

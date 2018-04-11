@@ -1,3 +1,7 @@
+// internationalization
+// from https://nuxtjs.org/examples/i18n/
+// docs: http://kazupon.github.io/vue-i18n/
+
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 
@@ -8,10 +12,10 @@ export default ({ app, store }) => {
   // This way we can use it in middleware and pages asyncData/fetch
   app.i18n = new VueI18n({
     locale: store.state.locale,
-    fallbackLocale: 'en',
+    fallbackLocale: 'de',
     messages: {
-      en: require('~/locales/en.json'),
-      es: require('~/locales/es.json')
+      de: require('~/locales/de.json'),
+      en: require('~/locales/en.json')
     }
   })
 }

@@ -1,7 +1,7 @@
 {
   "links": {
     "index": "Nuxt-i18n-contentful-starter",
-    "about": "About",
+    "about": "Über",
     "english": "English version",
     "german": "Deutsche Version"
   },
@@ -11,14 +11,14 @@
         "title": "Nuxt-i18n-contentful-starter",
         "description": "tbd"
       },
-      "title": "Welcome!"
+      "title": "Willkommen!"
     },
     "about": {
       "meta": {
-        "title": "About us",
+        "title": "Über uns",
         "description": "tbd"
       },
-      "title": "About"
+      "title": "Über uns"
     }
   }
 }
