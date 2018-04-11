@@ -40,7 +40,7 @@ export default {
     return Promise.all([
       // fetch all blogPosts sorted by creation date
       client.getEntries({
-        locale: store.state.locale,
+        locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
         content_type: env.CTF_BLOG_POST_TYPE_ID,
         order: '-sys.createdAt',
       }),

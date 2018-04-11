@@ -2,7 +2,7 @@
 <nav class="" role="navigation">
 
   <!-- language switcher -->
-  <nuxt-link v-if="$i18n.locale === 'de'" :to="`/en` + $route.fullPath" active-class="none" exact>
+  <nuxt-link v-if="$i18n.locale === 'en'" :to="`/es` + $route.fullPath" active-class="none" exact>
     {{ $t('links.english') }}
   </nuxt-link>
   <nuxt-link v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" active-class="none" exact>
@@ -38,7 +38,7 @@ export default {
   methods: {
     // return localized path for links
     path(url) {
-      return this.$i18n.locale === 'de' ? url : '/' + this.$i18n.locale + url // TODO: make this a method available globally
+      return this.$i18n.locale === 'en' ? url : '/' + this.$i18n.locale + url // TODO: make this a method available globally
     }
   }
 }

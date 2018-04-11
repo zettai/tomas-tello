@@ -12,9 +12,9 @@ export default ({ app, store }) => {
   // This way we can use it in middleware and pages asyncData/fetch
   app.i18n = new VueI18n({
     locale: store.state.locale,
-    fallbackLocale: 'de',
+    fallbackLocale: 'en',
     messages: {
-      de: require('~/locales/de.json'),
+      es: require('~/locales/es.json'),
       en: require('~/locales/en.json')
     }
   })

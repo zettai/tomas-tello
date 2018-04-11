@@ -45,7 +45,7 @@ module.exports = {
     vendor: ['~/plugins/vuetify.js', 'vue-i18n']
   },
   generate: {
-    routes: ['/', '/en', '/about', '/en/about'] // these routes will be pre-rendered on build
+    routes: ['/', '/es', '/about', '/es/about'] // these routes will be pre-rendered on build
   },
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,

@@ -1,7 +1,7 @@
 export const state = () => ({
   sidebar: false,
-  locales: ['en', 'de'],
-  locale: 'de'
+  locales: ['en', 'es'],
+  locale: 'en'
 })
 
 export const mutations = {
@@ -14,3 +14,4 @@ export const mutations = {
     state.sidebar = !state.sidebar
   }
 }
+
