@@ -6,7 +6,7 @@
 
   <!-- render data from contentful.com -->
   <ul>
-    <li v-for="blogPost in blogPosts" v-bind:key="blogPost">
+    <li v-for="blogPost in blogPosts" :key="blogPost.fields.title">
       <h3>{{ blogPost.fields.title }}</h3>
     </li>
   </ul>

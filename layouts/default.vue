@@ -88,6 +88,11 @@ export default {
       rightDrawer: false,
       title: 'Tomas Tello'
     }
+  },
+  watch: {
+    '$route' () {
+      Object.assign(this.$data,this.$options.data.call(this));
+    }
   }
 }
 </script>
