@@ -3,10 +3,10 @@
 
   <!-- language switcher -->
   <nuxt-link v-if="$i18n.locale === 'en'" :to="`/es` + $route.fullPath" active-class="none" exact>
-    {{ $t('links.english') }}
+    <a v-on:click="greet">{{ $t('links.spanish') }}</a>
   </nuxt-link>
   <nuxt-link v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" active-class="none" exact>
-    {{ $t('links.german') }}
+    <a v-on:click="greet">{{ $t('links.english') }}</a>
   </nuxt-link>
 
 
@@ -14,7 +14,7 @@
     <!-- localized link to home page -->
     <li>
       <nuxt-link class="" :to="path('/')" exact>
-        Home
+        {{ $t('links.home') }}
       </nuxt-link>
     </li>
     <!-- localized link to about page -->
@@ -39,6 +39,9 @@ export default {
     // return localized path for links
     path(url) {
       return this.$i18n.locale === 'en' ? url : '/' + this.$i18n.locale + url // TODO: make this a method available globally
+    },
+    greet: function(event) {
+      window.location.reload();
     }
   }
 }

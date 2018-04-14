@@ -1,9 +1,14 @@
 {
   "links": {
     "index": "Nuxt-i18n-contentful-starter",
+    "home": "Inicio",
     "about": "Acerca de",
-    "english": "English version",
-    "german": "Spanish Version"
+    "english": "English",
+    "spanish": "Español",
+    "music": "Música",
+    "images": "Imágenes",
+    "video": "Vídeo",
+    "press": "Prensa"
   },
   "page": {
     "index": {

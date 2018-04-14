@@ -82,11 +82,11 @@ export default {
       clipped: false,
       drawer: true,
       fixed: false,
-      items: [{ icon: 'apps', title: 'Welcome', to: '/' }, { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }],
+      items: [{ icon: 'apps', title: this.$t('links.home'), to: '/' }, { icon: 'bubble_chart', title: this.$t('links.music'), to: '/music' }],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Tomas Tello'
     }
   }
 }
