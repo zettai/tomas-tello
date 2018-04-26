@@ -1,14 +1,14 @@
 {
   "links": {
     "index": "Nuxt-i18n-contentful-starter",
-    "home": "Inicio",
-    "about": "Acerca de",
+    "home": {"title": "Inicio", "url":"/es/"},
+    "about": {"title": "Acerca de", "url":"/es/about"},
     "english": "English",
     "spanish": "Español",
-    "music": "Música",
-    "images": "Imágenes",
-    "video": "Vídeo",
-    "press": "Prensa"
+    "music": {"title": "Música", "url":"/es/music"},
+    "images": {"title": "Imágenes", "url":"/es/images"},
+    "video": {"title": "Vídeo", "url":"/es/video"},
+    "press": {"title": "Prensa", "url":"/es/press"}
   },
   "page": {
     "index": {

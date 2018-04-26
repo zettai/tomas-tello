@@ -1,30 +1,5 @@
 <template>
 <nav class="" role="navigation">
-
-  <!-- language switcher -->
-  <nuxt-link v-if="$i18n.locale === 'en'" :to="`/es` + $route.fullPath" active-class="none" exact>
-    {{ $t('links.spanish') }}
-  </nuxt-link>
-  <nuxt-link v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" active-class="none" exact>
-    {{ $t('links.english') }}
-  </nuxt-link>
-
-
-  <ul>
-    <!-- localized link to home page -->
-    <li>
-      <nuxt-link class="" :to="path('/')" exact>
-        {{ $t('links.home') }}
-      </nuxt-link>
-    </li>
-    <!-- localized link to about page -->
-    <li>
-      <nuxt-link :to="path('/about')" exact>
-        {{ $t('links.about') }}
-      </nuxt-link>
-    </li>
-  </ul>
-
 </nav>
 </template>
 

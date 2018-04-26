@@ -28,6 +28,12 @@
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
+      <nuxt-link v-if="$i18n.locale === 'en'" :to="`/es` + $route.fullPath" active-class="none" exact>
+        {{ $t('links.spanish') }}
+      </nuxt-link>
+      <nuxt-link v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" active-class="none" exact>
+        {{ $t('links.english') }}
+      </nuxt-link>
       <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
@@ -82,7 +88,14 @@ export default {
       clipped: false,
       drawer: true,
       fixed: false,
-      items: [{ icon: 'apps', title: this.$t('links.home'), to: '/' }, { icon: 'bubble_chart', title: this.$t('links.music'), to: '/music' }],
+      items: [
+        { icon: 'apps', title: this.$t('links.home.title'), to: this.$t('links.home.url') },
+        { icon: 'library_music', title: this.$t('links.music.title'), to: this.$t('links.music.url') },
+        { icon: 'music_video', title: this.$t('links.video.title'), to: this.$t('links.video.url') },
+        { icon: 'photo_library', title: this.$t('links.images.title'), to: this.$t('links.images.url') },
+        { icon: 'picture_as_pdf', title: this.$t('links.press.title'), to: this.$t('links.press.url') },
+        { icon: 'person_pin', title: this.$t('links.about.title'), to: this.$t('links.about.url') }
+      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
@@ -90,8 +103,8 @@ export default {
     }
   },
   watch: {
-    '$route' () {
-      Object.assign(this.$data,this.$options.data.call(this));
+    $route() {
+      Object.assign(this.$data, this.$options.data.call(this))
     }
   }
 }
