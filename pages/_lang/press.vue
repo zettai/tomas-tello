@@ -7,7 +7,7 @@
   <!-- render data from contentful.com -->
   <ul>
     <li v-for="p in press" :key="p.fields.title">
-      <h3>{{ p.fields.title }}</h3>
+      <h3>{{ p.fields.title }} - {{p.fields.description}}</h3>
       <a v-bind:href="p.fields.file.url">Download</a>
       <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
       <v-icon v-else>picture_as_pdf</v-icon>
@@ -53,7 +53,7 @@ export default {
     ])
       .then(([word, pdf]) => {
         // return data that should be available in the template
-        // console.log('press', word.items[0].fields.file)
+        console.log('press', word.items[0].fields.description.lang)
         return {
           press: word.items.concat(pdf.items),
         }

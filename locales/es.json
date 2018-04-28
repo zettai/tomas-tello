@@ -24,6 +24,27 @@
         "description": "tbd"
       },
       "title": "Acerca"
+    },
+    "music": {
+      "meta": {
+        "title": "Música",
+        "description": "tbd"
+      },
+      "title": "Música"
+    },
+    "video": {
+      "meta": {
+        "title": "Vídeo",
+        "description": "tbd"
+      },
+      "title": "Vídeo"
+    },
+    "press": {
+      "meta": {
+        "title": "Prensa",
+        "description": "tbd"
+      },
+      "title": "Prensa"
     }
   }
 }
