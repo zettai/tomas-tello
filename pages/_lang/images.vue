@@ -8,12 +8,25 @@
   <ul>
     <li v-if="!i.fields.description" v-for="i in images" :key="i.fields.title">
        <figure>
-          <a v-bind:href="i.fields.file.url"><img :src="i.fields.file.url + '?w=250'"></a>
+          <a @click.stop="dialog3 = true" v-on:click="some=i.fields.file.url" ><img :src="i.fields.file.url + '?w=250'"></a>
         </figure>
       <br />
     </li>
   </ul>
 
+  <v-dialog  v-model="dialog3" max-width="700px">
+    <v-card>
+      <v-card-actions>        
+        <v-btn color="primary" flat @click.stop="dialog3=false" v-on:click="some=''">Close</v-btn>
+      </v-card-actions>
+      <v-flex class="text-xs-center">
+        <figure>
+          <img :src="some + '?w=600'">
+        </figure>
+      </v-flex>
+      <br /><br />      
+    </v-card>
+  </v-dialog>
 
 </main>
 </template>
@@ -23,6 +36,12 @@ import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 
 export default {
+  data () {
+    return {
+      dialog3: false,
+      some: ''
+    }
+  },
   // html meta data for page
   head() {
     return {
