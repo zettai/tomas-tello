@@ -1,16 +1,18 @@
 <template>
 <main>
   <header>
-    <h1> {{ $t('page.about.title') }} </h1>
+    <h1> {{ $t('page.press.title') }} </h1>
   </header>
 
   <!-- render data from contentful.com -->
   <ul>
     <li v-for="p in press" :key="p.fields.title">
-      <h3>{{ p.fields.title }} - {{p.fields.description}}</h3>
-      <a v-bind:href="p.fields.file.url">Download</a>
+      <h3>
       <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
       <v-icon v-else>picture_as_pdf</v-icon>
+      {{ p.fields.title }} - {{p.fields.description}}</h3>
+      <a v-bind:href="p.fields.file.url">Download</a>
+      <br /><br />      
     </li>
   </ul>
 
@@ -26,12 +28,12 @@ export default {
   // html meta data for page
   head() {
     return {
-      title: this.$t('page.about.meta.title'),
+      title: this.$t('page.press.meta.title'),
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.$t('page.about.meta.description'),
+          content: this.$t('page.press.meta.description'),
         },
       ],
     }
@@ -64,6 +66,8 @@ export default {
 </script>
 
 <style scoped>
-
+ul {
+  list-style-type: none;
+}
 </style>
 

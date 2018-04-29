@@ -32,6 +32,13 @@
       },
       "title": "Música"
     },
+    "images": {
+      "meta": {
+        "title": "Imágenes",
+        "description": "tbd"
+      },
+      "title": "Imágenes"
+    },
     "video": {
       "meta": {
         "title": "Vídeo",

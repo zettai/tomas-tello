@@ -1,13 +1,16 @@
 <template>
 <main>
   <header>
-    <h1> {{ $t('page.about.title') }} </h1>
+    <h1> {{ $t('page.images.title') }} </h1>
   </header>
 
   <!-- render data from contentful.com -->
   <ul>
-    <li v-for="blogPost in blogPosts" :key="blogPost.fields.title">
-      <h3>{{ blogPost.fields.title }}</h3>
+    <li v-if="!i.fields.description" v-for="i in images" :key="i.fields.title">
+       <figure>
+          <a v-bind:href="i.fields.file.url"><img :src="i.fields.file.url + '?w=250'"></a>
+        </figure>
+      <br />
     </li>
   </ul>
 
@@ -18,18 +21,17 @@
 <script>
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
-// var blogPosts = ['1', '2']
 
 export default {
   // html meta data for page
   head() {
     return {
-      title: this.$t('page.about.meta.title'),
+      title: this.$t('page.images.meta.title'),
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.$t('page.about.meta.description'),
+          content: this.$t('page.images.meta.description'),
         },
       ],
     }
@@ -38,17 +40,17 @@ export default {
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
-      // fetch all blogPosts sorted by creation date
-      client.getEntries({
-        locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
-        content_type: env.CTF_BLOG_POST_TYPE_ID,
+      client.getAssets({
+        locale: 'en-US',
         order: '-sys.createdAt',
-      }),
+        mimetype_group: 'image'
+      })
     ])
-      .then(([blogPosts]) => {
+      .then(([images]) => {
         // return data that should be available in the template
+        // console.log('press', images.items[0].sys)
         return {
-          blogPosts: blogPosts.items,
+          images: images.items,
         }
       })
       .catch(console.error)
@@ -57,6 +59,8 @@ export default {
 </script>
 
 <style scoped>
-
+ul {
+  list-style-type: none;
+}
 </style>
 
