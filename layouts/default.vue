@@ -109,3 +109,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.content--wrap {
+  background-color: #303030
+}
+</style>
