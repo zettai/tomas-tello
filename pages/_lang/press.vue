@@ -55,7 +55,6 @@ export default {
     ])
       .then(([word, pdf]) => {
         // return data that should be available in the template
-        console.log('press', word.items[0].fields.description.lang)
         return {
           press: word.items.concat(pdf.items),
         }

@@ -46,7 +46,7 @@
         <Navigation></Navigation>
         <nuxt />
       </v-container>
-    </v-content>
+    </v-content>    
     <v-navigation-drawer
       temporary
       :right="right"
@@ -111,7 +111,5 @@ export default {
 </script>
 
 <style>
-.content--wrap {
-  background-color: #303030
-}
+
 </style>

@@ -1,7 +1,5 @@
 <template>
-    <figure>
-      <img :src="page.fields.background.fields.file.url">
-    </figure>
+  <img class="grey darken-3" :src="page.fields.background.fields.file.url" height="100%" width="100%">
 </template>
 
 <script>
@@ -32,7 +30,6 @@ export default {
     ])
       .then(([page]) => {
         // return data that should be available in the template
-        console.log('page', page.items)
 
         function findHomePage(item) {
           return item.fields.title === 'Home Page'
@@ -50,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.content--wrap {
-  background-color: #000000
+img {
+  border-style: solid;
 }
 </style>
