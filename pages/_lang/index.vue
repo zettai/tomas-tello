@@ -31,14 +31,14 @@ export default {
       .then(([page]) => {
         // return data that should be available in the template
 
-        function findHomePage(item) {
+        function findExactPage(item) {
           return item.fields.title === 'Home Page'
         }
 
-        var foundPage = page.items.filter(findHomePage)
+        var findPage = page.items.filter(findExactPage)
 
         return {
-          page : foundPage[0]
+          page : findPage[0]
         }
       })
       .catch(console.error)

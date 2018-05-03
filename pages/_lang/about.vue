@@ -5,22 +5,23 @@
   </header>
 
   <!-- render data from contentful.com -->
-  <ul>
-    <li v-for="blogPost in blogPosts" :key="blogPost.fields.title">
-      <h3>{{ blogPost.fields.title }}</h3>
-    </li>
-  </ul>
-
+      <!-- <h3>{{ page.fields.title }}</h3> -->
+      <vue-markdown>{{page.fields.body}}</vue-markdown>
 
 </main>
 </template>
 
 <script>
 import { createClient } from '~/plugins/contentful.js'
+import VueMarkdown from 'vue-markdown'
+
 const client = createClient()
 // var blogPosts = ['1', '2']
 
 export default {
+  components: {
+    VueMarkdown
+  },
   // html meta data for page
   head() {
     return {
@@ -41,14 +42,21 @@ export default {
       // fetch all blogPosts sorted by creation date
       client.getEntries({
         locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
-        content_type: env.CTF_BLOG_POST_TYPE_ID,
+        content_type: 'page',
         order: '-sys.createdAt',
       }),
     ])
-      .then(([blogPosts]) => {
+      .then(([page]) => {
         // return data that should be available in the template
+
+        function findExactPage(item) {
+          return item.fields.title === 'About Page'
+        }
+
+        var findPage = page.items.filter(findExactPage)
+
         return {
-          blogPosts: blogPosts.items,
+          page : findPage[0]
         }
       })
       .catch(console.error)
