@@ -2,30 +2,45 @@
   <v-container>
     <main>
       <header>
-        <h1> {{ $t('page.images.title') }} </h1>
+        <v-card-text class="px-0">
+        <h2 class="text-xs-center"> {{ $t('page.images.title') }} </h2>
+        </v-card-text>
       </header>
 
-      <ul>
-        <li v-if="!i.fields.description" v-for="i in images" :key="i.fields.title">
-          <figure>
-              <a @click.stop="dialog3 = true" v-on:click="some=i.fields.file.url" ><img :src="i.fields.file.url + '?w=250'"></a>
-            </figure>
-          <br />
-        </li>
-      </ul>
-
-      <v-dialog  v-model="dialog3" max-width="700px">
-        <v-card>
-          <v-card-actions>
-            <v-btn color="primary" flat @click.stop="dialog3=false" v-on:click="some=''">Close</v-btn>
-          </v-card-actions>
-          <v-flex class="text-xs-center">
-            <figure>
-              <img :src="some + '?w=600'">
-            </figure>
+      <v-container grid-list-sm fluid>
+        <v-layout row wrap>
+          <v-flex v-for="i in images" :key="i.fields.title" xs6 md2>
+            <v-card flat tile>
+                  <v-card-media
+                    @click.stop="dialog = true"
+                    v-on:click="fullurl=i.fields.file.url"
+                    :src="i.fields.file.url + '?w=250'"
+                    height="250px"
+                  >
+                  </v-card-media>
+                </v-card>
           </v-flex>
-          <br /><br />
-        </v-card>
+        </v-layout>
+      </v-container>
+
+      <v-dialog  v-model="dialog" full-width hide-overlay>
+        <v-layout>
+          <v-flex >
+             <v-card>
+                <v-layout fill-height>
+                  <v-flex >
+                    <a v-bind:href="fullurl" >
+                      <v-card-media :src="fullurl" height="800">
+                      </v-card-media>
+                    </a>
+                  </v-flex>
+                </v-layout>
+                <v-card-actions>
+                  <v-btn color="primary" flat @click.stop="dialog=false" v-on:click="fullurl=''">X</v-btn>
+                </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
       </v-dialog>
 
     </main>
@@ -39,8 +54,8 @@ const client = createClient()
 export default {
   data () {
     return {
-      dialog3: false,
-      some: ''
+      dialog: false,
+      fullurl: ''
     }
   },
   // html meta data for page
@@ -60,21 +75,26 @@ export default {
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
-      client.getAssets({
-        locale: 'en-US',
+      // fetch all blogPosts sorted by creation date
+      client.getEntries({
+        locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
+        content_type: 'page',
         order: '-sys.createdAt',
-        mimetype_group: 'image'
-      })
+      }),
     ])
-      .then(([images]) => {
+      .then(([page]) => {
         // return data that should be available in the template
-        // console.log('press', images.items[0].sys)
+        function findExactPage(item) {
+          return item.fields.title === 'Images Page'
+        }
+
+        var findPage = page.items.filter(findExactPage)
         return {
-          images: images.items,
+          images : findPage[0].fields.photos
         }
       })
       .catch(console.error)
-  },
+  }
 }
 </script>
 

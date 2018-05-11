@@ -76,13 +76,12 @@ export default {
         }
 
         var findPage = page.items.filter(findExactPage)
-        console.log('here', findPage[0].fields.background.fields.file)
         return {
           page : findPage[0]
         }
       })
       .catch(console.error)
-  },
+  }
 }
 </script>
 
