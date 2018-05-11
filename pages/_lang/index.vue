@@ -47,7 +47,5 @@ export default {
 </script>
 
 <style scoped>
-img {
-  border-style: solid;
-}
+
 </style>

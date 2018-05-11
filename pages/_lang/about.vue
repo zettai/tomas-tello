@@ -1,14 +1,13 @@
 <template>
-<main>
-  <header>
-    <h1> {{ $t('page.about.title') }} </h1>
-  </header>
+  <v-container>
+    <main>
+      <header>
+        <h1> {{ $t('page.about.title') }} </h1>
+      </header>
 
-  <!-- render data from contentful.com -->
-      <!-- <h3>{{ page.fields.title }}</h3> -->
       <vue-markdown>{{page.fields.body}}</vue-markdown>
-
-</main>
+    </main>
+  </v-container>
 </template>
 
 <script>

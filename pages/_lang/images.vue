@@ -1,34 +1,35 @@
 <template>
-<main>
-  <header>
-    <h1> {{ $t('page.images.title') }} </h1>
-  </header>
+  <v-container>
+    <main>
+      <header>
+        <h1> {{ $t('page.images.title') }} </h1>
+      </header>
 
-  <!-- render data from contentful.com -->
-  <ul>
-    <li v-if="!i.fields.description" v-for="i in images" :key="i.fields.title">
-       <figure>
-          <a @click.stop="dialog3 = true" v-on:click="some=i.fields.file.url" ><img :src="i.fields.file.url + '?w=250'"></a>
-        </figure>
-      <br />
-    </li>
-  </ul>
+      <ul>
+        <li v-if="!i.fields.description" v-for="i in images" :key="i.fields.title">
+          <figure>
+              <a @click.stop="dialog3 = true" v-on:click="some=i.fields.file.url" ><img :src="i.fields.file.url + '?w=250'"></a>
+            </figure>
+          <br />
+        </li>
+      </ul>
 
-  <v-dialog  v-model="dialog3" max-width="700px">
-    <v-card>
-      <v-card-actions>        
-        <v-btn color="primary" flat @click.stop="dialog3=false" v-on:click="some=''">Close</v-btn>
-      </v-card-actions>
-      <v-flex class="text-xs-center">
-        <figure>
-          <img :src="some + '?w=600'">
-        </figure>
-      </v-flex>
-      <br /><br />      
-    </v-card>
-  </v-dialog>
+      <v-dialog  v-model="dialog3" max-width="700px">
+        <v-card>
+          <v-card-actions>
+            <v-btn color="primary" flat @click.stop="dialog3=false" v-on:click="some=''">Close</v-btn>
+          </v-card-actions>
+          <v-flex class="text-xs-center">
+            <figure>
+              <img :src="some + '?w=600'">
+            </figure>
+          </v-flex>
+          <br /><br />
+        </v-card>
+      </v-dialog>
 
-</main>
+    </main>
+  </v-container>
 </template>
 
 <script>

@@ -1,24 +1,23 @@
 <template>
-<main>
-  <header>
-    <h1> {{ $t('page.music.title') }} </h1>
-  </header>
+  <v-container>
+    <main>
+      <header>
+        <h1> {{ $t('page.music.title') }} </h1>
+      </header>
 
-  <!-- render data from contentful.com -->
-  <ul>
-    <li v-for="m in music" :key="m.fields.title">
-      <h3>{{ m.fields.title }}</h3>
-      <audio controls>
-        <source :src="m.fields.file.url" type="audio/mpeg"> Your browser does not support the audio element.
-      </audio>
-      <br />
-      <a v-bind:href="m.fields.file.url">Download</a>
-      <v-icon>music</v-icon>
-    </li>
-  </ul>
-
-
-</main>
+      <ul>
+        <li v-for="m in music" :key="m.fields.title">
+          <h3>{{ m.fields.title }}</h3>
+          <audio controls>
+            <source :src="m.fields.file.url" type="audio/mpeg"> Your browser does not support the audio element.
+          </audio>
+          <br />
+          <a v-bind:href="m.fields.file.url">Download</a>
+          <v-icon>music</v-icon>
+        </li>
+      </ul>
+    </main>
+  </v-container>
 </template>
 
 <script>

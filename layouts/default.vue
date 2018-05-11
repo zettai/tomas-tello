@@ -42,11 +42,8 @@
       </v-btn>
     </v-toolbar>
     <v-content>
-      <v-container>
-        <Navigation></Navigation>
         <nuxt />
-      </v-container>
-    </v-content>    
+    </v-content>
     <v-navigation-drawer
       temporary
       :right="right"

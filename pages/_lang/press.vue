@@ -1,23 +1,22 @@
 <template>
-<main>
-  <header>
-    <h1> {{ $t('page.press.title') }} </h1>
-  </header>
+  <v-container>
+    <main>
+      <header>
+        <h1> {{ $t('page.press.title') }} </h1>
+      </header>
 
-  <!-- render data from contentful.com -->
-  <ul>
-    <li v-for="p in press" :key="p.fields.title">
-      <h3>
-      <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
-      <v-icon v-else>picture_as_pdf</v-icon>
-      {{ p.fields.title }} - {{p.fields.description}}</h3>
-      <a v-bind:href="p.fields.file.url">Download</a>
-      <br /><br />      
-    </li>
-  </ul>
-
-
-</main>
+      <ul>
+        <li v-for="p in press" :key="p.fields.title">
+          <h3>
+          <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
+          <v-icon v-else>picture_as_pdf</v-icon>
+          {{ p.fields.title }} - {{p.fields.description}}</h3>
+          <a v-bind:href="p.fields.file.url">Download</a>
+          <br /><br />
+        </li>
+      </ul>
+    </main>
+  </v-container>
 </template>
 
 <script>

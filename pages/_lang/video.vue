@@ -1,24 +1,23 @@
 <template>
-<main>
-  <header>
-    <h1> {{ $t('page.video.title') }} </h1>
-  </header>
+  <v-container>
+    <main>
+      <header>
+        <h1> {{ $t('page.video.title') }} </h1>
+      </header>
 
-  <!-- render data from contentful.com -->
-  <ul>
-    <li v-if="v.fields.file.contentType == 'video/mp4'" v-for="v in video" :key="v.fields.title">
-      <h3>{{ v.fields.title }}</h3>
-      <video width="600px" controls>
-        <source :src="v.fields.file.url" type="video/mp4"> Your browser does not support the video element.
-      </video>
-      <br>
-      <a v-bind:href="v.fields.file.url">Download</a>
-      <v-icon>video</v-icon>
-    </li>
-  </ul>
-
-
-</main>
+      <ul>
+        <li v-if="v.fields.file.contentType == 'video/mp4'" v-for="v in video" :key="v.fields.title">
+          <h3>{{ v.fields.title }}</h3>
+          <video width="600px" controls>
+            <source :src="v.fields.file.url" type="video/mp4"> Your browser does not support the video element.
+          </video>
+          <br>
+          <a v-bind:href="v.fields.file.url">Download</a>
+          <v-icon>video</v-icon>
+        </li>
+      </ul>
+    </main>
+  </v-container>
 </template>
 
 <script>
@@ -34,9 +33,9 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.$t('page.video.meta.description'),
-        },
-      ],
+          content: this.$t('page.video.meta.description')
+        }
+      ]
     }
   },
 
@@ -53,11 +52,11 @@ export default {
         // return data that should be available in the template
         // console.log('video ', video)
         return {
-          video: video.items,
+          video: video.items
         }
       })
       .catch(console.error)
-  },
+  }
 }
 </script>
 
