@@ -2,10 +2,33 @@
   <v-container>
     <main>
       <header>
-        <h1> {{ $t('page.about.title') }} </h1>
+        <v-card-text class="px-0">
+        <h2 class="text-xs-center"> {{ $t('page.about.title') }} </h2>
+        </v-card-text>
       </header>
 
-      <vue-markdown>{{page.fields.body}}</vue-markdown>
+      <v-container grid-list-md fluid>
+      <v-layout row wrap>
+      <v-flex d-flex xs12 sm6 md6>
+        <v-card dark color="secondary">
+          <v-card-text class="px-2">
+            <vue-markdown>{{page.fields.body}}</vue-markdown>
+          </v-card-text>
+        </v-card>
+      </v-flex>
+
+      <v-flex d-flex xs12 sm6 md6>
+        <v-card dark color="secondary">
+          <v-card-text class="px-2">
+            <h3>{{ $t('page.about.contact') }}</h3>
+            <vue-markdown>{{page.fields.contact}}</vue-markdown>
+            <br/>
+            <vue-markdown>{{page.fields.message}}</vue-markdown>
+          </v-card-text>
+        </v-card>
+      </v-flex>
+      </v-layout>
+      </v-container>
     </main>
   </v-container>
 </template>
