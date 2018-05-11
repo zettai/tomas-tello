@@ -12,6 +12,7 @@
       <v-flex d-flex xs12 sm6 md6>
         <v-card dark color="secondary">
           <v-card-text class="px-2">
+            <img :src="page.fields.background.fields.file.url" height="100%" width="100%">
             <vue-markdown>{{page.fields.body}}</vue-markdown>
           </v-card-text>
         </v-card>
@@ -38,7 +39,6 @@ import { createClient } from '~/plugins/contentful.js'
 import VueMarkdown from 'vue-markdown'
 
 const client = createClient()
-// var blogPosts = ['1', '2']
 
 export default {
   components: {
@@ -76,7 +76,7 @@ export default {
         }
 
         var findPage = page.items.filter(findExactPage)
-
+        console.log('here', findPage[0].fields.background.fields.file)
         return {
           page : findPage[0]
         }
