@@ -29,36 +29,17 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <nuxt-link v-if="$i18n.locale === 'en'" :to="`/es` + $route.fullPath" active-class="none" exact>
-        {{ $t('links.spanish') }}
+        <h2>{{ $t('links.spanish') }}</h2>
       </nuxt-link>
       <nuxt-link v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" active-class="none" exact>
-        {{ $t('links.english') }}
+        <h2>{{ $t('links.english') }}</h2>
       </nuxt-link>
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
     </v-toolbar>
+
     <v-content>
         <nuxt />
     </v-content>
-    <v-navigation-drawer
-      temporary
-      :right="right"
-      v-model="rightDrawer"
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+
     <v-footer :fixed="fixed" app>
       <span>&copy; 2018</span>
     </v-footer>

@@ -2,11 +2,13 @@
   <v-container>
     <main>
       <header>
-        <h1> {{ $t('page.video.title') }} </h1>
+        <v-card-text class="px-0">
+        <h2 class="text-xs-center"> {{ $t('page.video.title') }} </h2>
+        </v-card-text>
       </header>
 
       <ul>
-        <li v-if="v.fields.file.contentType == 'video/mp4'" v-for="v in video" :key="v.fields.title">
+        <li v-for="v in video" :key="v.fields.title">
           <h3>{{ v.fields.title }}</h3>
           <video width="600px" controls>
             <source :src="v.fields.file.url" type="video/mp4"> Your browser does not support the video element.
@@ -42,17 +44,22 @@ export default {
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
-      client.getAssets({
-        locale: 'en-US',
+      // fetch all entries sorted by creation date
+      client.getEntries({
+        locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
+        content_type: 'page',
         order: '-sys.createdAt',
-        mimetype_group: 'video'
-      })
+      }),
     ])
-      .then(([video]) => {
+      .then(([page]) => {
         // return data that should be available in the template
-        // console.log('video ', video)
+        function findExactPage(item) {
+          return item.fields.title === 'Video Page'
+        }
+
+        var findPage = page.items.filter(findExactPage)
         return {
-          video: video.items
+          video : findPage[0].fields.pagefiles
         }
       })
       .catch(console.error)

@@ -58,6 +58,7 @@ export default {
       fullurl: ''
     }
   },
+
   // html meta data for page
   head() {
     return {
@@ -75,7 +76,7 @@ export default {
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
-      // fetch all blogPosts sorted by creation date
+      // fetch all entries sorted by creation date
       client.getEntries({
         locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
         content_type: 'page',
@@ -90,7 +91,7 @@ export default {
 
         var findPage = page.items.filter(findExactPage)
         return {
-          images : findPage[0].fields.photos
+          images : findPage[0].fields.pagefiles
         }
       })
       .catch(console.error)

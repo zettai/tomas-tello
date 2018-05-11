@@ -61,7 +61,7 @@ export default {
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
-      // fetch all blogPosts sorted by creation date
+      // fetch all entries sorted by creation date
       client.getEntries({
         locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
         content_type: 'page',

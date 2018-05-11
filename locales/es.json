@@ -6,7 +6,7 @@
     "english": "English",
     "spanish": "Español",
     "music": {"title": "Música", "url":"/es/music"},
-    "images": {"title": "Imágenes", "url":"/es/images"},
+    "images": {"title": "Imágen", "url":"/es/images"},
     "video": {"title": "Vídeo", "url":"/es/video"},
     "press": {"title": "Prensa", "url":"/es/press"}
   },
@@ -23,7 +23,7 @@
         "title": "Acerca de",
         "description": "tbd"
       },
-      "title": "Acerca",
+      "title": "Acerca de",
       "contact": "Contacto"
     },
     "music": {
@@ -35,10 +35,10 @@
     },
     "images": {
       "meta": {
-        "title": "Imágenes",
+        "title": "Imágen",
         "description": "tbd"
       },
-      "title": "Imágenes"
+      "title": "Imágen"
     },
     "video": {
       "meta": {

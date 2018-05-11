@@ -2,7 +2,9 @@
   <v-container>
     <main>
       <header>
-        <h1> {{ $t('page.music.title') }} </h1>
+        <v-card-text class="px-0">
+        <h2 class="text-xs-center"> {{ $t('page.music.title') }} </h2>
+        </v-card-text>
       </header>
 
       <ul>
@@ -42,21 +44,26 @@ export default {
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
-      client.getAssets({
-        locale: 'en-US',
+      // fetch all entries sorted by creation date
+      client.getEntries({
+        locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
+        content_type: 'page',
         order: '-sys.createdAt',
-        mimetype_group: 'audio'
-      })
+      }),
     ])
-      .then(([music]) => {
+      .then(([page]) => {
         // return data that should be available in the template
-        // console.log('press', word.items[0].fields.description.lang)
+        function findExactPage(item) {
+          return item.fields.title === 'Music Page'
+        }
+
+        var findPage = page.items.filter(findExactPage)
         return {
-          music: music.items,
+          music : findPage[0].fields.pagefiles
         }
       })
       .catch(console.error)
-  },
+  }
 }
 </script>
 

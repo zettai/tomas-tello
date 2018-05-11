@@ -44,7 +44,7 @@ export default {
   },
   asyncData({ env, store }) {
     return Promise.all([
-      // fetch all blogPosts sorted by creation date
+      // fetch all entries sorted by creation date
       client.getEntries({
         content_type: 'page',
         order: '-sys.createdAt'
@@ -58,7 +58,6 @@ export default {
         }
 
         var findPage = page.items.filter(findExactPage)
-
         return {
           page: findPage[0]
         }

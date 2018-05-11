@@ -6,7 +6,7 @@
     "english": "English",
     "spanish": "Español",
     "music": {"title": "Music", "url":"/music/"},
-    "images": {"title": "Images", "url":"/images/"},
+    "images": {"title": "Image", "url":"/images/"},
     "video": {"title": "Video", "url":"/video/"},
     "press": {"title": "Press", "url":"/press/"}
   },
@@ -35,10 +35,10 @@
     },
     "images": {
       "meta": {
-        "title": "Images",
+        "title": "Image",
         "description": "tbd"
       },
-      "title": "Images"
+      "title": "Image"
     },
     "video": {
       "meta": {
