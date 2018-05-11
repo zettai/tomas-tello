@@ -27,6 +27,7 @@ module.exports = {
     middleware: 'i18n'
   },
   plugins: [
+    {src:'~/plugins/vue-particles.js', ssr: false},
     '~/plugins/vuetify.js',
     '~/plugins/i18n.js',
     '~/plugins/contentful.js',

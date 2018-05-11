@@ -1,9 +1,31 @@
 <template>
-  <img class="grey darken-3" :src="page.fields.background.fields.file.url" height="100%" width="100%">
+  <div class='background-container' :style="{ backgroundImage: 'url(' + page.fields.background.fields.file.url + ')',  }" >
+    <no-ssr>
+      <vue-particles
+        color="#dedede"
+        :particleOpacity="0.7"
+        :particlesNumber="80"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#dedede"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="3"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+      >
+      </vue-particles>
+    </no-ssr>
+  </div>
 </template>
 
 <script>
 import { createClient } from '~/plugins/contentful.js'
+
 const client = createClient()
 
 export default {
@@ -25,8 +47,8 @@ export default {
       // fetch all blogPosts sorted by creation date
       client.getEntries({
         content_type: 'page',
-        order: '-sys.createdAt',
-      }),
+        order: '-sys.createdAt'
+      })
     ])
       .then(([page]) => {
         // return data that should be available in the template
@@ -38,7 +60,7 @@ export default {
         var findPage = page.items.filter(findExactPage)
 
         return {
-          page : findPage[0]
+          page: findPage[0]
         }
       })
       .catch(console.error)
@@ -46,6 +68,13 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+.background-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 </style>
