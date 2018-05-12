@@ -14,7 +14,7 @@
                   <v-card-media
                     @click.stop="dialog = true"
                     v-on:click="fullurl=i.fields.file.url"
-                    :src="i.fields.file.url + '?w=250'"
+                    :src="i.fields.file.url + '?fm=jpg&q=30'"
                     height="250px"
                   >
                   </v-card-media>
@@ -28,11 +28,14 @@
           <v-flex >
              <v-card>
                 <v-layout fill-height>
-                  <v-flex >
-                    <a v-bind:href="fullurl" >
-                      <v-card-media :src="fullurl" height="800">
-                      </v-card-media>
-                    </a>
+                  <v-flex>
+                    <v-card dark>
+                      <v-card-text>
+                        <a v-bind:href="fullurl" >
+                          <img :src="fullurl" height="100%" width="100%">
+                        </a>
+                      </v-card-text>
+                    </v-card>
                   </v-flex>
                 </v-layout>
                 <v-card-actions>

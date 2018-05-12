@@ -7,17 +7,20 @@
         </v-card-text>
       </header>
 
-      <ul>
-        <li v-for="v in video" :key="v.fields.title">
-          <h3>{{ v.fields.title }}</h3>
-          <video width="600px" controls>
-            <source :src="v.fields.file.url" type="video/mp4"> Your browser does not support the video element.
-          </video>
-          <br>
-          <a v-bind:href="v.fields.file.url">Download</a>
-          <v-icon>video</v-icon>
-        </li>
-      </ul>
+      <v-container grid-list-sm fluid>
+        <v-layout row wrap>
+          <v-flex lg3  v-for="v in video" :key="v.fields.title">            
+            <v-card  flat tile>
+              <h3>{{ v.fields.title }}</h3>
+              <video width="100%" controls>
+                <source :src="v.fields.file.url" type="video/mp4"> Your browser does not support the video element.
+              </video>
+              <br />
+            </v-card>            
+          </v-flex>          
+        </v-layout>
+      </v-container>
+
     </main>
   </v-container>
 </template>
