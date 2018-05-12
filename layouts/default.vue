@@ -45,11 +45,11 @@
       </nuxt-link>
 
       <nuxt-link class="hidden-sm-and-up" v-if="$i18n.locale === 'en'" :to="`/es` + $route.fullPath" exact>
-        <v-icon>mdi_translate</v-icon>
+        {{ $t('links.spanish') }}
       </nuxt-link>
       
       <nuxt-link class="hidden-sm-and-up" v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" exact>
-        <v-icon>mdi_translate</v-icon>
+        {{ $t('links.english') }}
       </nuxt-link>
 
     </v-toolbar>
