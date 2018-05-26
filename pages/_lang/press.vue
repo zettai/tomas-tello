@@ -3,7 +3,7 @@
     <main>
       <header>
         <v-card-text class="px-0">
-        <h2 class="text-xs-center"> {{ $t('page.press.title') }} </h2>
+        <!-- <h2 class="text-xs-center"> {{ $t('page.press.title') }} </h2> -->
         </v-card-text>
       </header>
 
@@ -39,7 +39,6 @@ export default {
       ],
     }
   },
-
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
@@ -48,17 +47,15 @@ export default {
         locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
         content_type: 'page',
         order: '-sys.createdAt',
-      }),
+      })
     ])
       .then(([page]) => {
         // return data that should be available in the template
         function findExactPage(item) {
           return item.fields.title === 'Press Page'
         }
-
-        var findPage = page.items.filter(findExactPage)
         return {
-          press : findPage[0].fields.pagefiles
+          press : page.items.filter(findExactPage)[0].fields.pagefiles
         }
       })
       .catch(console.error)

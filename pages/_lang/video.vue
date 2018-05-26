@@ -3,7 +3,7 @@
     <main>
       <header>
         <v-card-text class="px-0">
-        <h2 class="text-xs-center"> {{ $t('page.video.title') }} </h2>
+        <!-- <h2 class="text-xs-center"> {{ $t('page.video.title') }} </h2> -->
         </v-card-text>
       </header>
 
@@ -43,26 +43,23 @@ export default {
       ]
     }
   },
-
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
       // fetch all entries sorted by creation date
       client.getEntries({
-        locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
+        locale: store.state.locale == 'en' ? 'en-US' : store.state.locale,
         content_type: 'page',
-        order: '-sys.createdAt',
-      }),
+        order: '-sys.createdAt'
+      })
     ])
       .then(([page]) => {
         // return data that should be available in the template
         function findExactPage(item) {
           return item.fields.title === 'Video Page'
         }
-
-        var findPage = page.items.filter(findExactPage)
         return {
-          video : findPage[0].fields.pagefiles
+          video: page.items.filter(findExactPage)[0].fields.pagefiles
         }
       })
       .catch(console.error)
@@ -75,4 +72,3 @@ ul {
   list-style-type: none;
 }
 </style>
-

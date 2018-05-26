@@ -28,36 +28,44 @@
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
 
-      <v-spacer></v-spacer>
-      
-      <nuxt-link class="hidden-xs-only" v-if="$i18n.locale === 'en'" :to="`/es` + $route.fullPath" exact>
-        <v-btn flat small>
-          <h2 class="glitch" :data-text="$t('links.spanish')">{{ $t('links.spanish') }}</h2>
-          <v-icon>mdi_translate</v-icon>
-        </v-btn>        
-      </nuxt-link>
-      
-      <nuxt-link class="hidden-xs-only" v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" exact>
-        <v-btn  flat small>                
-          <h2 class="glitch" :data-text="$t('links.english')">{{ $t('links.english') }}</h2>
-          <v-icon>mdi_translate</v-icon>
-        </v-btn>        
+  <v-spacer></v-spacer>
+       <nuxt-link v-if="$route.fullPath.split('/')[3]" class="hidden-xs-only" :to="{ name: 'lang-news-slug', params: { lang: reverseLocale, slug: morecomplexRoute }}">
+        <v-btn small flat>
+          <h2 class="glitch" v-if="$i18n.locale === 'en'" :data-text="$t('links.spanish')">{{ $t('links.spanish') }}<v-icon class="trans-icon">mdi_translate</v-icon></h2>
+          <h2 class="glitch" v-else :data-text="$t('links.english')">{{ $t('links.english') }}<v-icon class="trans-icon hidden-xs-only">mdi_translate</v-icon></h2>
+        </v-btn>
       </nuxt-link>
 
-      <nuxt-link class="hidden-sm-and-up" v-if="$i18n.locale === 'en'" :to="`/es` + $route.fullPath" exact>
-        {{ $t('links.spanish') }}
+      <nuxt-link v-else :to="complexRoute">
+        <v-btn small flat>
+          <h2 class="glitch" v-if="$i18n.locale === 'en'" :data-text="$t('links.spanish')">{{ $t('links.spanish') }}<v-icon class="trans-icon">mdi_translate</v-icon></h2>
+          <h2 class="glitch" v-else :data-text="$t('links.english')">{{ $t('links.english') }}<v-icon class="trans-icon hidden-xs-only">mdi_translate</v-icon></h2>
+        </v-btn>
       </nuxt-link>
       
-      <nuxt-link class="hidden-sm-and-up" v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')" exact>
-        {{ $t('links.english') }}
-      </nuxt-link>
-
+      <v-btn id="music-toggle"
+        icon
+        @click.stop="rightDrawer = !rightDrawer"
+      >
+        <v-icon>volume_up</v-icon>
+      </v-btn>
+      <snackbar-store />
     </v-toolbar>
 
     <v-content>
         <nuxt />
     </v-content>
+    <v-navigation-drawer
+      temporary
+      :right="right"
+      v-model="rightDrawer"
+      fixed
 
+    >
+      <v-list>
+        <audio-player></audio-player>
+      </v-list>
+    </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
       <span>&copy; 2018</span>
     </v-footer>
@@ -65,11 +73,45 @@
 </template>
 
 <script>
-import Navigation from '~/components/Navigation.vue'
+import AudioPlayer from '~/components/audio-player'
+import snackbarStore from '~/components/snackbarStore'
 
 export default {
+  created() {
+    this.$store.dispatch('filterContentful', { self: this })
+  },
+  methods: {
+    filterContentful() {
+      function findExactPage(item) {
+        return item.fields.title === 'Music Page'
+      }
+      this.$store.state.songs = this.$store.state.songs.items.filter(findExactPage)[0].fields.pagefiles
+    }
+  },
   components: {
-    Navigation
+    AudioPlayer,
+    snackbarStore
+  },
+  computed: {
+    reverseLocale: function() {
+      return this.$i18n.locale == 'en' ? 'es' : 'en'
+    },
+    morecomplexRoute: function() {
+      let slug = ''
+      slug = this.$route.fullPath.split('/')[3]
+
+      return slug
+    },
+    complexRoute: function() {
+      let properRoute = ''
+      properRoute = this.$route.fullPath
+
+      if (this.$i18n.locale === 'en') {
+        return '/es' + properRoute
+      } else {
+        return properRoute.replace(/^\/[^\/]+/, '')
+      }
+    }
   },
   head() {
     return {
@@ -90,12 +132,13 @@ export default {
         { icon: 'music_video', title: this.$t('links.video.title'), to: this.$t('links.video.url') },
         { icon: 'photo_library', title: this.$t('links.images.title'), to: this.$t('links.images.url') },
         { icon: 'picture_as_pdf', title: this.$t('links.press.title'), to: this.$t('links.press.url') },
+        { icon: 'announcement', title: this.$t('links.news.title'), to: this.$t('links.news.url') },
         { icon: 'person_pin', title: this.$t('links.about.title'), to: this.$t('links.about.url') }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Tomas Tello'
+      title: 'Tomás Tello'
     }
   },
   watch: {
@@ -107,12 +150,15 @@ export default {
 </script>
 
 <style scoped>
-
 .glitch {
   color: white;
-  
+  font-size: 1.2rem;
   position: relative;
   margin: 0 auto;
+}
+
+.trans-icon {
+  margin-left: -80px;
 }
 
 @keyframes noise-anim {
@@ -270,5 +316,4 @@ export default {
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
 }
-
 </style>

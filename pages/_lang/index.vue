@@ -56,10 +56,8 @@ export default {
         function findExactPage(item) {
           return item.fields.title === 'Home Page'
         }
-
-        var findPage = page.items.filter(findExactPage)
         return {
-          page: findPage[0]
+          page: page.items.filter(findExactPage)[0]
         }
       })
       .catch(console.error)

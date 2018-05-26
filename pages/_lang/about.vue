@@ -1,12 +1,6 @@
 <template>
   <v-container>
     <main>
-      <header>
-        <v-card-text class="px-0">
-        <h2 class="text-xs-center"> {{ $t('page.about.title') }} </h2>
-        </v-card-text>
-      </header>
-
       <v-container grid-list-md fluid>
       <v-layout row wrap>
       <v-flex d-flex xs12 sm6 md6>
@@ -21,7 +15,7 @@
       <v-flex d-flex xs12 sm6 md6>
         <v-card dark color="secondary">
           <v-card-text class="px-2">
-            <h3>{{ $t('page.about.contact') }}</h3>
+            <app-h1 isBrand="true">{{ $t('page.about.contact') }}</app-h1>
             <vue-markdown>{{page.fields.contact}}</vue-markdown>
             <br/>
             <vue-markdown>{{page.fields.message}}</vue-markdown>
@@ -37,12 +31,14 @@
 <script>
 import { createClient } from '~/plugins/contentful.js'
 import VueMarkdown from 'vue-markdown'
+import h1 from '@/components/h1';
 
 const client = createClient()
 
 export default {
   components: {
-    VueMarkdown
+    VueMarkdown,
+    'app-h1': h1
   },
   // html meta data for page
   head() {
@@ -57,7 +53,6 @@ export default {
       ],
     }
   },
-
   // `env` is available in the context object
   asyncData({ env, store }) {
     return Promise.all([
@@ -66,7 +61,7 @@ export default {
         locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
         content_type: 'page',
         order: '-sys.createdAt',
-      }),
+      })
     ])
       .then(([page]) => {
         // return data that should be available in the template
@@ -74,10 +69,8 @@ export default {
         function findExactPage(item) {
           return item.fields.title === 'About Page'
         }
-
-        var findPage = page.items.filter(findExactPage)
         return {
-          page : findPage[0]
+          page : page.items.filter(findExactPage)[0]
         }
       })
       .catch(console.error)

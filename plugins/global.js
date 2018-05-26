@@ -1,6 +1,5 @@
 import Vue from 'vue'
 
-
 // disable "development mode" warning
 Vue.config.productionTip = false
 

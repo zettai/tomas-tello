@@ -1,56 +1,56 @@
 {
   "links": {
-    "index": "Nuxt-i18n-contentful-starter",
-    "home": {"title": "Inicio", "url":"/es/"},
-    "about": {"title": "Acerca de", "url":"/es/about"},
+    "home": { "title": "Inicio", "url": "/es/" },
+    "about": { "title": "Acerca de", "url": "/es/about" },
     "english": "English",
     "spanish": "Español",
-    "music": {"title": "Música", "url":"/es/music"},
-    "images": {"title": "Imágen", "url":"/es/images"},
-    "video": {"title": "Vídeo", "url":"/es/video"},
-    "press": {"title": "Prensa", "url":"/es/press"}
+    "music": { "title": "Música", "url": "/es/music" },
+    "images": { "title": "Imágen", "url": "/es/images" },
+    "video": { "title": "Vídeo", "url": "/es/video" },
+    "news": { "title": "Notícias", "url": "/es/news" },
+    "press": { "title": "Prensa", "url": "/es/press" }
   },
   "page": {
     "index": {
       "meta": {
-        "title": "Nuxt-i18n-contentful-starter",
-        "description": "tbd"
+        "title": "Tomás Tello - Sitio Web Oficial",
+        "description": "Tomás Tello - Música y Sitio Web Oficial"
       },
       "title": "Bienvenidos!"
     },
     "about": {
       "meta": {
-        "title": "Acerca de",
-        "description": "tbd"
+        "title": "Tomás Tello - Sobre Tomás",
+        "description": "Tomás Tello - Sobre Tomás"
       },
       "title": "Acerca de",
       "contact": "Contacto"
     },
     "music": {
       "meta": {
-        "title": "Música",
-        "description": "tbd"
+        "title": "Tomás Tello - Música",
+        "description": "Tomás Tello - Música"
       },
       "title": "Música"
     },
     "images": {
       "meta": {
-        "title": "Imágen",
-        "description": "tbd"
+        "title": "Tomás Tello - Imágenes",
+        "description": "Tomás Tello -Imágenes y Fotos"
       },
       "title": "Imágen"
     },
     "video": {
       "meta": {
-        "title": "Vídeo",
-        "description": "tbd"
+        "title": "Tomás Tello - Vídeo",
+        "description": "Tomás Tello - Vídeo"
       },
       "title": "Vídeo"
     },
     "press": {
       "meta": {
-        "title": "Prensa",
-        "description": "tbd"
+        "title": "Tomás Tello - Prensa",
+        "description": "Tomás Tello - Textos y Artículos de Prensa"
       },
       "title": "Prensa"
     }

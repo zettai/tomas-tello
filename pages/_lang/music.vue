@@ -1,32 +1,59 @@
 <template>
   <v-container>
     <main>
-      <header>
-        <v-card-text class="px-0">
-        <h2 class="text-xs-center"> {{ $t('page.music.title') }} </h2>
-        </v-card-text>
-      </header>
-
+      <h2>{{playing}}</h2>
+      <v-btn @click="playAll()">Play All</v-btn>
+      <v-btn icon @click="pauseSong()"><v-icon>pause</v-icon></v-btn>
       <ul>
         <li v-for="m in music" :key="m.fields.title">
-          <h3>{{ m.fields.title }}</h3>
-          <audio controls>
-            <source :src="m.fields.file.url" type="audio/mpeg"> Your browser does not support the audio element.
-          </audio>
-          <br />
-          <a v-bind:href="m.fields.file.url">Download</a>
-          <v-icon>music</v-icon>
+          <div>
+            <v-btn color="normal" icon @click="playSong(m.fields.file.url, m.fields.file.fileName)"><v-icon>play_arrow</v-icon></v-btn>
+          <a v-bind:href="m.fields.file.url"><v-icon>save_alt</v-icon></a>
+          <h3 class="inline-info">&nbsp;&nbsp;{{ m.fields.title }}</h3>
+          </div>
         </li>
-      </ul>
+      </ul>      
     </main>
   </v-container>
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js'
-const client = createClient()
+import { mapMutations } from "vuex";
 
 export default {
+  data() {
+    return {
+    playing: ''
+    }
+  },
+  methods: {
+    playSong(url, fileName) {
+      let el = document.getElementById('findthisaudio')
+      let src = document.getElementById('findthissource')
+
+      src.src = url
+      el.load()
+      el.play()
+      this.openSnackbar(fileName)
+      this.playing = fileName
+    },
+    pauseSong() {
+      let el = document.getElementById('findthisaudio')
+      el.pause()
+    },
+    playAll() {
+
+    },
+    ...mapMutations(["showSnackbar", "closeSnackbar"]),
+    openSnackbar(message) {
+      this.showSnackbar({ text: message });
+    }
+  },
+  computed: {
+    music: function() {
+      return this.$store.state.songs
+    }
+  },
   // html meta data for page
   head() {
     return {
@@ -35,34 +62,10 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.$t('page.music.meta.description'),
-        },
-      ],
+          content: this.$t('page.music.meta.description')
+        }
+      ]
     }
-  },
-
-  // `env` is available in the context object
-  asyncData({ env, store }) {
-    return Promise.all([
-      // fetch all entries sorted by creation date
-      client.getEntries({
-        locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
-        content_type: 'page',
-        order: '-sys.createdAt',
-      }),
-    ])
-      .then(([page]) => {
-        // return data that should be available in the template
-        function findExactPage(item) {
-          return item.fields.title === 'Music Page'
-        }
-
-        var findPage = page.items.filter(findExactPage)
-        return {
-          music : findPage[0].fields.pagefiles
-        }
-      })
-      .catch(console.error)
   }
 }
 </script>
@@ -70,6 +73,10 @@ export default {
 <style scoped>
 ul {
   list-style-type: none;
+}
+
+.inline-info {
+  display: inline;
 }
 </style>
 
