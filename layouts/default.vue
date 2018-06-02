@@ -74,7 +74,7 @@
 
 <script>
 import AudioPlayer from '~/components/audio-player'
-import snackbarStore from '~/components/snackbarStore'
+import SnackbarStore from '~/components/snackbar-store'
 
 export default {
   created() {
@@ -90,7 +90,7 @@ export default {
   },
   components: {
     AudioPlayer,
-    snackbarStore
+    SnackbarStore
   },
   computed: {
     reverseLocale: function() {
