@@ -4,10 +4,12 @@
     "about": { "title": "About", "url": "/about/" },
     "english": "English",
     "spanish": "Español",
+    "site": "site info",
     "music": { "title": "Music", "url": "/music/" },
     "images": { "title": "Image", "url": "/images/" },
     "video": { "title": "Video", "url": "/video/" },
     "news": { "title": "News", "url": "/news/" },
+    "radio": { "title": "Radio", "url": "/radio/" },
     "press": { "title": "Press", "url": "/press/" }
   },
   "page": {
@@ -53,6 +55,13 @@
         "description": "Tomás Tello - Press Articles and Documents"
       },
       "title": "Press"
+    },
+    "radio": {
+      "meta": {
+        "title": "Tomás Tello - Radio",
+        "description": "Tomás Tello - Radio Music Stream selected by"
+      },
+      "title": "Radio"
     }
   }
 }

@@ -2,40 +2,37 @@
   <v-container>
     <main>
       <header>
-        <v-card-text class="px-0">
-        </v-card-text>
+        <app-h1 isBrand="true">
+            {{ radio.fields.message }}
+        </app-h1>
       </header>
-
-      <ul>
-        <li v-for="p in press" :key="p.fields.title">
-          <h3>
-          <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
-          <v-icon v-else>picture_as_pdf</v-icon>
-          {{ p.fields.title }} - {{p.fields.description}}</h3>
-          <a v-bind:href="p.fields.file.url">Download</a>
-          <br /><br />
-        </li>
-      </ul>
+      <v-spacer></v-spacer>
+      <iframe :src="radio.fields.body" height="395px" scrolling="no" frameborder="no"></iframe>    
     </main>
   </v-container>
 </template>
 
 <script>
 import { createClient } from '~/plugins/contentful.js'
+import h1 from '@/components/h1'
+
 const client = createClient()
 
 export default {
+  components: {
+    'app-h1': h1
+  },
   // html meta data for page
   head() {
     return {
-      title: this.$t('page.press.meta.title'),
+      title: this.$t('page.radio.meta.title'),
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.$t('page.press.meta.description'),
-        },
-      ],
+          content: this.$t('page.radio.meta.description')
+        }
+      ]
     }
   },
   // `env` is available in the context object
@@ -43,18 +40,18 @@ export default {
     return Promise.all([
       // fetch all entries sorted by creation date
       client.getEntries({
-        locale: (store.state.locale == 'en')? 'en-US':store.state.locale,
+        locale: store.state.locale == 'en' ? 'en-US' : store.state.locale,
         content_type: 'page',
-        order: '-sys.createdAt',
+        order: '-sys.createdAt'
       })
     ])
       .then(([page]) => {
         // return data that should be available in the template
         function findExactPage(item) {
-          return item.fields.title === 'Press Page'
+          return item.fields.title === 'Radio Page'
         }
         return {
-          press : page.items.filter(findExactPage)[0].fields.pagefiles
+          radio: page.items.filter(findExactPage)[0]
         }
       })
       .catch(console.error)
@@ -63,8 +60,5 @@ export default {
 </script>
 
 <style scoped>
-ul {
-  list-style-type: none;
-}
 </style>
 

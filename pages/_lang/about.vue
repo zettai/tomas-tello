@@ -18,12 +18,38 @@
             <app-h1 isBrand="true">{{ $t('page.about.contact') }}</app-h1>
             <vue-markdown>{{page.fields.contact}}</vue-markdown>
             <br/>
-            <vue-markdown>{{page.fields.message}}</vue-markdown>
+            <vue-markdown>{{page.fields.message}}</vue-markdown>            
           </v-card-text>
+          <v-btn small @click="dialog = true"><v-icon>web</v-icon>{{$t('links.site')}}</v-btn>
         </v-card>
       </v-flex>
       </v-layout>
       </v-container>
+
+      <v-dialog v-model="dialog" max-width="400px">
+          <v-card>
+            <v-card-title>
+              <h2>Site Credits and Info</h2>
+              <v-spacer></v-spacer>
+            </v-card-title>
+            <v-container>
+              <ul>
+                <li>Built by Luis Salas ( <a href="https://twitter.com/Keinesvonuns" rel="nofollow" target="_blank">@keinesvonuns</a> )</li>
+                <li>Using Nuxt ( <a href="https://nuxtjs.org" rel="nofollow" target="_blank">nuxtjs.org</a> )</li>
+                <li>and Vuetify ( <a href="https://vuetifyjs.com" rel="nofollow" target="_blank">vuetifyjs.com</a> )</li>                
+                <li>Powered by Contentful ( <a href="https://www.contentful.com" rel="nofollow" target="_blank">contentful.com</a> )</li>
+                <li>Hosted/Deployed by Netlify ( <a href="https://www.netlify.com" rel="nofollow" target="_blank">netlify.com</a> )</li>
+                <li>Repo Code in BitBucket ( <a href="https://bitbucket.org" rel="nofollow" target="_blank">bitbucket.org</a> )</li>
+                <li>And Also...</li>                
+                <li>Vue-Particles ( <a href="https://github.com/creotip/vue-particles" rel="nofollow" target="_blank">github.com</a> )</li>
+                <li>Glitch Pen By Lucas Bebber ( <a href="https://codepen.io/lbebber/pen/ypgql" rel="nofollow" target="_blank">codepen.io</a> )</li>
+              </ul>
+            </v-container>            
+            <v-card-actions>
+              <v-btn color="primary" flat @click.stop="dialog=false">Close</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
     </main>
   </v-container>
 </template>
@@ -36,6 +62,11 @@ import h1 from '@/components/h1';
 const client = createClient()
 
 export default {
+  data() {
+    return {
+      dialog: false
+    }
+  },
   components: {
     VueMarkdown,
     'app-h1': h1
@@ -79,6 +110,8 @@ export default {
 </script>
 
 <style scoped>
-
+ul {
+  list-style-type: none;
+}
 </style>
 

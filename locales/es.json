@@ -4,10 +4,12 @@
     "about": { "title": "Acerca de", "url": "/es/about" },
     "english": "English",
     "spanish": "Español",
+    "site": "Info Sitio",
     "music": { "title": "Música", "url": "/es/music" },
     "images": { "title": "Imágen", "url": "/es/images" },
     "video": { "title": "Vídeo", "url": "/es/video" },
     "news": { "title": "Notícias", "url": "/es/news" },
+    "radio": { "title": "Rádio", "url": "/es/radio" },
     "press": { "title": "Prensa", "url": "/es/press" }
   },
   "page": {
@@ -53,6 +55,13 @@
         "description": "Tomás Tello - Textos y Artículos de Prensa"
       },
       "title": "Prensa"
+    },
+    "radio": {
+      "meta": {
+        "title": "Tomás Tello - Rádio",
+        "description": "Tomás Tello - Selección Musical vía Rádio"
+      },
+      "title": "Rádio"
     }
   }
 }

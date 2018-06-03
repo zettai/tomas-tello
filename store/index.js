@@ -8,8 +8,10 @@ const createStore = () => {
       sidebar: false,
       locales: ['en', 'es'],
       locale: 'en',
+      playingNow: '',
       songs: [],
       snackbar: {
+        color: 'primary',
         visible: false,
         text: null,
         timeout: 3000,
@@ -41,6 +43,9 @@ const createStore = () => {
         if (state.locales.indexOf(locale) !== -1) {
           state.locale = locale
         }
+      },
+      setSongName(state, song) {
+        song ? state.playingNow = song : state.playingNow = ''
       },
       FILTER_CONTENFUL(state, songs) {
         state.songs = songs

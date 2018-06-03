@@ -2,6 +2,7 @@
     <v-snackbar
     :timeout="snackbar.timeout"
     :multi-line="snackbar.multiline === true"
+    :color="snackbar.color"
     top
     v-model="snackbar.visible">
         {{ snackbar.text }}
