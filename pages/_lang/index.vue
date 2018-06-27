@@ -42,17 +42,15 @@ export default {
       ]
     }
   },
+  // Calling contentful here to avoid problems with localized data
   asyncData({ env, store }) {
     return Promise.all([
-      // fetch all entries sorted by creation date
       client.getEntries({
         content_type: 'page',
         order: '-sys.createdAt'
       })
     ])
       .then(([page]) => {
-        // return data that should be available in the template
-
         function findExactPage(item) {
           return item.fields.title === 'Home Page'
         }

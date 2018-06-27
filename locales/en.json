@@ -1,16 +1,16 @@
 {
   "links": {
-    "home": { "title": "Home", "url": "/" },
     "about": { "title": "About", "url": "/about/" },
     "english": "English",
-    "spanish": "Español",
-    "site": "site info",
-    "music": { "title": "Music", "url": "/music/" },
+    "home": { "title": "Home", "url": "/" },
     "images": { "title": "Image", "url": "/images/" },
-    "video": { "title": "Video", "url": "/video/" },
+    "music": { "title": "Music", "url": "/music/" },
     "news": { "title": "News", "url": "/news/" },
+    "press": { "title": "Press", "url": "/press/" },
     "radio": { "title": "Radio", "url": "/radio/" },
-    "press": { "title": "Press", "url": "/press/" }
+    "site": "site info",
+    "spanish": "Español",
+    "video": { "title": "Video", "url": "/video/" }
   },
   "page": {
     "index": {

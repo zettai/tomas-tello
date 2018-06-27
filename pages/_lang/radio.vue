@@ -7,7 +7,7 @@
         </app-h1>
       </header>
       <v-spacer></v-spacer>
-      <iframe :src="radio.fields.body" height="395px" scrolling="no" frameborder="no"></iframe>    
+      <iframe :src="radio.fields.body" height="395px" scrolling="no" frameborder="no"></iframe>
     </main>
   </v-container>
 </template>
@@ -22,7 +22,6 @@ export default {
   components: {
     'app-h1': h1
   },
-  // html meta data for page
   head() {
     return {
       title: this.$t('page.radio.meta.title'),
@@ -35,10 +34,9 @@ export default {
       ]
     }
   },
-  // `env` is available in the context object
+  // Calling contentful here to avoid problems with localized data
   asyncData({ env, store }) {
     return Promise.all([
-      // fetch all entries sorted by creation date
       client.getEntries({
         locale: store.state.locale == 'en' ? 'en-US' : store.state.locale,
         content_type: 'page',
@@ -46,7 +44,6 @@ export default {
       })
     ])
       .then(([page]) => {
-        // return data that should be available in the template
         function findExactPage(item) {
           return item.fields.title === 'Radio Page'
         }

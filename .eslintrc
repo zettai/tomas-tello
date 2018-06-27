@@ -1,6 +1,6 @@
 {
   "extends": ["eslint:recommended", "plugin:vue/recommended", "plugin:import/errors", "plugin:import/warnings"],
-  "env":{
+  "env": {
     "node": true
   },
   "rules": {

@@ -15,7 +15,7 @@ export default function({ isHMR, app, store, route, params, error, redirect }) {
   // Set locale
   store.commit('SET_LANG', locale)
   app.i18n.locale = store.state.locale
-  // News Routes have slug that can be problematic
+  // News Routes have slugs and can be problematic
   if (route.fullPath === '/en/news/' || route.fullPath === '/en/news') {
     return redirect('/news')
   }

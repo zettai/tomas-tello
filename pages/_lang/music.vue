@@ -13,7 +13,7 @@
             <h3 class="inline-info">&nbsp;&nbsp;{{ m.fields.title }}</h3>
           </div>
         </li>
-      </ul>      
+      </ul>
     </main>
   </v-container>
 </template>
@@ -23,49 +23,6 @@ import { mapMutations } from 'vuex'
 import h1 from '@/components/h1'
 
 export default {
-  components: {
-    'app-h1': h1
-  },
-  mounted: function() {
-    this.$root.$on('update', data => {
-      this.something()
-    })
-  },
-  computed: {
-    music: function() {
-      return this.$store.state.songs
-    }
-  },
-  methods: {
-    playingNow() {
-      return this.$store.state.playingNow
-    },
-    something() {
-      console.log('hehe', this.music)
-
-    },
-    playSong(url, fileName) {
-      let data = {}
-      data.url = url
-      data.fileName = fileName
-      this.openSnackbar(fileName)
-      // this.setSongName(fileName)
-      this.$root.$emit('play-song', data)
-    },
-    pauseSong() {
-      this.$root.$emit('play-pause-song', null)
-    },
-    playAll() {
-      this.$root.$emit('play-all', this.music)
-      // this.openSnackbar('tbc')
-      // console.log('tbc', this.music)
-    },
-    ...mapMutations(['showSnackbar', 'closeSnackbar', 'setSongName']),
-    openSnackbar(message) {
-      this.showSnackbar({ text: message })
-    }
-  },
-  // html meta data for page
   head() {
     return {
       title: this.$t('page.music.meta.title'),
@@ -76,6 +33,36 @@ export default {
           content: this.$t('page.music.meta.description')
         }
       ]
+    }
+  },
+  components: {
+    'app-h1': h1
+  },
+  computed: {
+    music: function() {
+      return this.$store.state.songs
+    }
+  },
+  methods: {
+    playingNow() {
+      return this.$store.state.playingNow
+    },
+    playSong(url, fileName) {
+      let data = {}
+      data.url = url
+      data.fileName = fileName
+      this.openSnackbar(fileName)
+      this.$root.$emit('play-song', data)
+    },
+    pauseSong() {
+      this.$root.$emit('play-pause-song', null)
+    },
+    playAll() {
+      this.$root.$emit('play-all', this.music)
+    },
+    ...mapMutations(['showSnackbar', 'closeSnackbar', 'setSongName']),
+    openSnackbar(message) {
+      this.showSnackbar({ text: message })
     }
   }
 }

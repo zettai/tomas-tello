@@ -1,16 +1,16 @@
 {
   "links": {
-    "home": { "title": "Inicio", "url": "/es/" },
     "about": { "title": "Acerca de", "url": "/es/about" },
     "english": "English",
-    "spanish": "Español",
-    "site": "Info Sitio",
-    "music": { "title": "Música", "url": "/es/music" },
+    "home": { "title": "Inicio", "url": "/es/" },
     "images": { "title": "Imágen", "url": "/es/images" },
-    "video": { "title": "Vídeo", "url": "/es/video" },
+    "music": { "title": "Música", "url": "/es/music" },
     "news": { "title": "Notícias", "url": "/es/news" },
+    "press": { "title": "Prensa", "url": "/es/press" },
     "radio": { "title": "Rádio", "url": "/es/radio" },
-    "press": { "title": "Prensa", "url": "/es/press" }
+    "site": "Info Sitio",
+    "spanish": "Español",
+    "video": { "title": "Vídeo", "url": "/es/video" }
   },
   "page": {
     "index": {

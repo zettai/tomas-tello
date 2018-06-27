@@ -5,17 +5,20 @@ const client = createClient()
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      sidebar: false,
-      locales: ['en', 'es'],
+      contentful: [],
+      images: [],
       locale: 'en',
+      locales: ['en', 'es'],
       playingNow: '',
+      sidebar: false,
       songs: [],
+      videos: [],
       snackbar: {
         color: 'primary',
-        visible: false,
+        multiline: false,
         text: null,
         timeout: 3000,
-        multiline: false
+        visible: false
       }
     },
     mutations: {
@@ -39,29 +42,27 @@ const createStore = () => {
         state.snackbar.timeout = 3000
         state.snackbar.text = null
       },
+      setSongName(state, song) {
+        song ? (state.playingNow = song) : (state.playingNow = '')
+      },
       SET_LANG(state, locale) {
         if (state.locales.indexOf(locale) !== -1) {
           state.locale = locale
         }
       },
-      setSongName(state, song) {
-        song ? state.playingNow = song : state.playingNow = ''
-      },
-      FILTER_CONTENFUL(state, songs) {
-        state.songs = songs
+      FILTER_CONTENFUL(state, response) {
+        state.contentful = response
       }
     },
     actions: {
       filterContentful({ commit }, { self }) {
         return Promise.all([
-          // fetch all entries sorted by creation date
           client.getEntries({
             content_type: 'page',
             order: '-sys.createdAt'
           })
         ])
           .then(([response]) => {
-            // console.log(response)
             commit('FILTER_CONTENFUL', response)
             self.filterContentful()
           })
