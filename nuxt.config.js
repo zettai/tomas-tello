@@ -4,9 +4,6 @@ const ctfConfig = getConfigForKeys(['CTF_BLOG_POST_TYPE_ID', 'CTF_SPACE_ID', 'CT
 const cdaClient = createClient(ctfConfig)
 
 const config = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'Tomás Tello',
     meta: [
@@ -28,7 +25,6 @@ const config = {
   },
   plugins: [
     { src: '~/plugins/vue-particles.js', ssr: false },
-    { src: '~/plugins/aplayer.js', ssr: false },
     '~/plugins/vuetify.js',
     '~/plugins/i18n.js',
     '~/plugins/contentful.js',
@@ -36,13 +32,7 @@ const config = {
     '~/plugins/global.js'
   ],
   css: ['~/assets/style/app.styl', '~/assets/css/glitch.css'],
-  /*
-  ** Customize the progress bar color
-  */
   loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
   build: {
     vendor: ['~/plugins/vuetify.js', 'vue-i18n']
   },
