@@ -6,6 +6,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       contentful: [],
+      contentful_es: [],
       images: [],
       locale: 'en',
       locales: ['en', 'es'],
@@ -13,6 +14,10 @@ const createStore = () => {
       sidebar: false,
       songs: [],
       videos: [],
+      press: [],
+      press_es: [],
+      radio: [],
+      radio_es: [],
       snackbar: {
         color: 'primary',
         multiline: false,
@@ -52,6 +57,9 @@ const createStore = () => {
       },
       FILTER_CONTENFUL(state, response) {
         state.contentful = response
+      },
+      FILTER_CONTENFUL_ES(state, response) {
+        state.contentful_es = response
       }
     },
     actions: {
@@ -59,12 +67,27 @@ const createStore = () => {
         return Promise.all([
           client.getEntries({
             content_type: 'page',
+            locale: 'en-US',
             order: '-sys.createdAt'
           })
         ])
           .then(([response]) => {
             commit('FILTER_CONTENFUL', response)
             self.filterContentful()
+          })
+          .catch(console.error)
+      },
+      filterContentfulES({ commit }, { self }) {
+        return Promise.all([
+          client.getEntries({
+            content_type: 'page',
+            locale: 'es',
+            order: '-sys.createdAt'
+          })
+        ])
+          .then(([response]) => {
+            commit('FILTER_CONTENFUL_ES', response)
+            self.filterContentfulES()
           })
           .catch(console.error)
       }

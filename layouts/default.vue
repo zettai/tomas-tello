@@ -103,11 +103,11 @@ export default {
   },
   created() {
     this.$store.dispatch('filterContentful', { self: this })
+    this.$store.dispatch('filterContentfulES', { self: this })
   },
   methods: {
     filterContentful() {
-      // These 3 pages don't use localization so we can just fetch them all at the same time
-      let pageTitles = ['Music Page', 'Video Page', 'Images Page']
+      let pageTitles = ['Music Page', 'Video Page', 'Images Page', 'Press Page', 'Radio Page']
 
       pageTitles.forEach(title => {
         function findExactPage(item) {
@@ -122,6 +122,30 @@ export default {
             break
           case 'Images Page':
             this.$store.state.images = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
+            break
+          case 'Press Page':
+            this.$store.state.press = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
+            break
+          case 'Radio Page':
+            this.$store.state.radio = this.$store.state.contentful.items.filter(findExactPage)[0]
+            break
+        }
+      })
+    },
+    filterContentfulES() {
+      let pageTitles = ['Press Page', 'Radio Page']
+
+      pageTitles.forEach(title => {
+        function findExactPage(item) {
+          return item.fields.title === title
+        }
+        switch (title) {
+          case 'Press Page':
+            this.$store.state.press_es = this.$store.state.contentful_es.items.filter(findExactPage)[0].fields.pagefiles
+            break
+          case 'Radio Page':
+
+            this.$store.state.radio_es = this.$store.state.contentful_es.items.filter(findExactPage)[0]
             break
         }
       })

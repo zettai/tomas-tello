@@ -2,7 +2,7 @@
   <v-container>
     <main>
       <ul>
-        <li v-for="p in press" :key="p.fields.title">
+        <li v-for="p in press()" :key="p.fields.title">
           <h3>
           <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
           <v-icon v-else>picture_as_pdf</v-icon>
@@ -32,24 +32,10 @@ export default {
       ]
     }
   },
-  // Calling contentful here to avoid problems with localized data
-  asyncData({ env, store }) {
-    return Promise.all([
-      client.getEntries({
-        locale: store.state.locale == 'en' ? 'en-US' : store.state.locale,
-        content_type: 'page',
-        order: '-sys.createdAt'
-      })
-    ])
-      .then(([page]) => {
-        function findExactPage(item) {
-          return item.fields.title === 'Press Page'
-        }
-        return {
-          press: page.items.filter(findExactPage)[0].fields.pagefiles
-        }
-      })
-      .catch(console.error)
+  methods: {
+    press() {
+      return this.$i18n.locale == 'en' ? this.$store.state.press : this.$store.state.press_es
+    }
   }
 }
 </script>
