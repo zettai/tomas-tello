@@ -29,7 +29,6 @@ import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 
 export default {
-  // html meta data for page
   head() {
     return {
       title: this.$t('page.index.meta.title'),
@@ -64,9 +63,5 @@ export default {
 </script>
 
 <style>
-.background-container {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-}
+
 </style>

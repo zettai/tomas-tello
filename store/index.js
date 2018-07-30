@@ -14,6 +14,8 @@ const createStore = () => {
       sidebar: false,
       songs: [],
       videos: [],
+      about: [],
+      about_es: [],
       press: [],
       press_es: [],
       radio: [],
@@ -24,7 +26,54 @@ const createStore = () => {
         text: null,
         timeout: 3000,
         visible: false
-      }
+      },
+      credits: [
+        {
+          comment: 'Built by Luis Salas',
+          url: 'https://twitter.com/Keinesvonuns',
+          text: '@keinesvonuns'
+        },
+        {
+          comment: 'Using Nuxt',
+          url: 'https://nuxtjs.org',
+          text: 'nuxtjs.org'
+        },
+        {
+          comment: 'and Vuetify',
+          url: 'https://vuetifyjs.com',
+          text: 'vuetifyjs.com'
+        },
+        {
+          comment: 'Powered by Contentful',
+          url: 'https://www.contentful.com',
+          text: 'contentful.com'
+        },
+        {
+          comment: 'Hosted/Deployed by Netlify',
+          url: 'https://www.netlify.com',
+          text: 'netlify.com'
+        },
+        {
+          comment: 'Repo Code in GitHub',
+          url: 'https://bitbucket.org',
+          text: 'github.com'
+        },
+        {
+          comment: 'And Also...',
+          url: '',
+          text: ''
+        },
+        {
+          comment: 'Vue-Particles',
+          url: 'https://github.com/creotip/vue-particles',
+          text: 'github.com'
+        },
+        {
+          comment: 'Glitch Pen By Lucas Bebber',
+          url: 'https://codepen.io/lbebber/pen/ypgql',
+          text: 'codepen.io'
+        }
+      ]
     },
     mutations: {
       showSnackbar(state, payload) {

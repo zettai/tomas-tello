@@ -4,21 +4,21 @@
       <v-container grid-list-md fluid>
       <v-layout row wrap>
       <v-flex d-flex xs12 sm6 md6>
-        <v-card dark color="secondary">
+        <v-card dark color="secondary"  v-for="a in about()"  :key="a.id" v-if="a.contact">
           <v-card-text class="px-2">
-            <img :src="page.fields.background.fields.file.url" height="100%" width="100%">
-            <vue-markdown>{{page.fields.body}}</vue-markdown>
+            <img :src="a.background.fields.file.url" height="100%" width="100%">
+            <vue-markdown>{{a.body}}</vue-markdown>
           </v-card-text>
         </v-card>
       </v-flex>
 
       <v-flex d-flex xs12 sm6 md6>
-        <v-card dark color="secondary">
+        <v-card dark color="secondary" v-for="a in about()" :key="a.id" v-if="a.contact">
           <v-card-text class="px-2">
             <app-h1 isBrand="true">{{ $t('page.about.contact') }}</app-h1>
-            <vue-markdown>{{page.fields.contact}}</vue-markdown>
+            <vue-markdown>{{a.contact}}</vue-markdown>
             <br/>
-            <vue-markdown>{{page.fields.message}}</vue-markdown>
+            <vue-markdown>{{a.message}}</vue-markdown>
           </v-card-text>
           <v-btn small @click="dialog = true"><v-icon>web</v-icon>{{$t('links.site')}}</v-btn>
         </v-card>
@@ -34,15 +34,10 @@
             </v-card-title>
             <v-container>
               <ul>
-                <li>Built by Luis Salas ( <a href="https://twitter.com/Keinesvonuns" rel="nofollow" target="_blank">@keinesvonuns</a> )</li>
-                <li>Using Nuxt ( <a href="https://nuxtjs.org" rel="nofollow" target="_blank">nuxtjs.org</a> )</li>
-                <li>and Vuetify ( <a href="https://vuetifyjs.com" rel="nofollow" target="_blank">vuetifyjs.com</a> )</li>
-                <li>Powered by Contentful ( <a href="https://www.contentful.com" rel="nofollow" target="_blank">contentful.com</a> )</li>
-                <li>Hosted/Deployed by Netlify ( <a href="https://www.netlify.com" rel="nofollow" target="_blank">netlify.com</a> )</li>
-                <li>Repo Code in BitBucket ( <a href="https://bitbucket.org" rel="nofollow" target="_blank">bitbucket.org</a> )</li>
-                <li>And Also...</li>
-                <li>Vue-Particles ( <a href="https://github.com/creotip/vue-particles" rel="nofollow" target="_blank">github.com</a> )</li>
-                <li>Glitch Pen By Lucas Bebber ( <a href="https://codepen.io/lbebber/pen/ypgql" rel="nofollow" target="_blank">codepen.io</a> )</li>
+                <li v-for="c in credits()" :key="c.text">
+                  <span v-if="c.url">{{ c.comment }} ( <a :href="c.url" rel="nofollow" target="_blank">{{c.text}}</a> )</span>
+                  <span v-else>{{ c.comment }}</span>
+                  </li>
               </ul>
             </v-container>
             <v-card-actions>
@@ -83,31 +78,18 @@ export default {
       ]
     }
   },
-  // Calling contentful here to avoid problems with localized data
-  asyncData({ env, store }) {
-    return Promise.all([
-      client.getEntries({
-        locale: store.state.locale == 'en' ? 'en-US' : store.state.locale,
-        content_type: 'page',
-        order: '-sys.createdAt'
-      })
-    ])
-      .then(([page]) => {
-        function findExactPage(item) {
-          return item.fields.title === 'About Page'
-        }
-        return {
-          page: page.items.filter(findExactPage)[0]
-        }
-      })
-      .catch(console.error)
+  methods: {
+    credits() {
+      return this.$store.state.credits
+    },
+    about() {
+      return this.$i18n.locale == 'en' ? this.$store.state.about : this.$store.state.about_es
+    }
   }
 }
 </script>
 
-<style scoped>
-ul {
-  list-style-type: none;
-}
+<style>
+
 </style>
 

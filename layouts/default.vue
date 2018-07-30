@@ -107,7 +107,7 @@ export default {
   },
   methods: {
     filterContentful() {
-      let pageTitles = ['Music Page', 'Video Page', 'Images Page', 'Press Page', 'Radio Page']
+      let pageTitles = ['Music Page', 'Video Page', 'Images Page', 'Press Page', 'Radio Page', 'About Page']
 
       pageTitles.forEach(title => {
         function findExactPage(item) {
@@ -129,11 +129,14 @@ export default {
           case 'Radio Page':
             this.$store.state.radio = this.$store.state.contentful.items.filter(findExactPage)[0]
             break
+          case 'About Page':
+            this.$store.state.about = this.$store.state.contentful.items.filter(findExactPage)[0]
+            break
         }
       })
     },
     filterContentfulES() {
-      let pageTitles = ['Press Page', 'Radio Page']
+      let pageTitles = ['Press Page', 'Radio Page', 'About Page']
 
       pageTitles.forEach(title => {
         function findExactPage(item) {
@@ -144,8 +147,10 @@ export default {
             this.$store.state.press_es = this.$store.state.contentful_es.items.filter(findExactPage)[0].fields.pagefiles
             break
           case 'Radio Page':
-
             this.$store.state.radio_es = this.$store.state.contentful_es.items.filter(findExactPage)[0]
+            break
+          case 'About Page':
+            this.$store.state.about_es = this.$store.state.contentful_es.items.filter(findExactPage)[0]
             break
         }
       })
@@ -199,5 +204,15 @@ html {
 
 .contentful-logo > img {
   width: 50%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.background-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 </style>
