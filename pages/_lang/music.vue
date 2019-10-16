@@ -4,12 +4,19 @@
       <app-h1 isBrand="true">{{playingNow()}}</app-h1>
       <br />
       <v-btn @click="playAll()">Play All</v-btn>
-      <v-btn @click="pauseSong()"><v-icon>play_arrow</v-icon>/<v-icon>pause</v-icon></v-btn>
+      <v-btn @click="pauseSong()">
+        <v-icon>play_arrow</v-icon>/
+        <v-icon>pause</v-icon>
+      </v-btn>
       <ul>
         <li v-for="m in music" :key="m.fields.title">
           <div>
-            <v-btn color="normal" icon @click="playSong(m.fields.file.url, m.fields.title)"><v-icon>play_arrow</v-icon></v-btn>
-            <v-btn icon v-bind:href="m.fields.file.url"><v-icon>save_alt</v-icon></v-btn>
+            <v-btn color="normal" icon @click="playSong(m.fields.file.url, m.fields.title)">
+              <v-icon>play_arrow</v-icon>
+            </v-btn>
+            <v-btn icon v-bind:href="m.fields.file.url">
+              <v-icon>save_alt</v-icon>
+            </v-btn>
             <h3 class="inline-info">&nbsp;&nbsp;{{ m.fields.title }}</h3>
           </div>
         </li>

@@ -1,5 +1,11 @@
 <template>
-  <v-snackbar :timeout="snackbar.timeout" :multi-line="snackbar.multiline === true" :color="snackbar.color" top v-model="snackbar.visible">
+  <v-snackbar
+    :timeout="snackbar.timeout"
+    :multi-line="snackbar.multiline === true"
+    :color="snackbar.color"
+    top
+    v-model="snackbar.visible"
+  >
     {{ snackbar.text }}
     <v-btn flat dark @click.native="closeSnackbar">X</v-btn>
   </v-snackbar>

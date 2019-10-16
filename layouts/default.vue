@@ -1,6 +1,12 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer :mini-variant.sync="miniVariant" :clipped="clipped" v-model="drawer" fixed app>
+    <v-navigation-drawer
+      :mini-variant.sync="miniVariant"
+      :clipped="clipped"
+      v-model="drawer"
+      fixed
+      app
+    >
       <v-list>
         <v-list-tile router :to="item.to" :key="i" v-for="(item, i) in items" exact>
           <v-list-tile-action>
@@ -18,12 +24,18 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <nuxt-link v-if="$route.fullPath.split('/')[3]" class="hidden-xs-only" :to="{ 'name': 'lang-news-slug', 'params': { 'lang': reverseLocale, 'slug': morecomplexRoute }}">
+      <nuxt-link
+        v-if="$route.fullPath.split('/')[3]"
+        class="hidden-xs-only"
+        :to="{ 'name': 'lang-news-slug', 'params': { 'lang': reverseLocale, 'slug': morecomplexRoute }}"
+      >
         <v-btn small flat>
-          <h2 class="glitch" v-if="$i18n.locale === 'en'" :data-text="$t('links.spanish')">{{ $t('links.spanish') }}
+          <h2 class="glitch" v-if="$i18n.locale === 'en'" :data-text="$t('links.spanish')">
+            {{ $t('links.spanish') }}
             <v-icon class="trans-icon">mdi_translate</v-icon>
           </h2>
-          <h2 class="glitch" v-else :data-text="$t('links.english')">{{ $t('links.english') }}
+          <h2 class="glitch" v-else :data-text="$t('links.english')">
+            {{ $t('links.english') }}
             <v-icon class="trans-icon hidden-xs-only">mdi_translate</v-icon>
           </h2>
         </v-btn>
@@ -31,10 +43,12 @@
 
       <nuxt-link v-else :to="complexRoute">
         <v-btn small flat>
-          <h2 class="glitch" v-if="$i18n.locale === 'en'" :data-text="$t('links.spanish')">{{ $t('links.spanish') }}
+          <h2 class="glitch" v-if="$i18n.locale === 'en'" :data-text="$t('links.spanish')">
+            {{ $t('links.spanish') }}
             <v-icon class="trans-icon">mdi_translate</v-icon>
           </h2>
-          <h2 class="glitch" v-else :data-text="$t('links.english')">{{ $t('links.english') }}
+          <h2 class="glitch" v-else :data-text="$t('links.english')">
+            {{ $t('links.english') }}
             <v-icon class="trans-icon hidden-xs-only">mdi_translate</v-icon>
           </h2>
         </v-btn>
@@ -58,9 +72,17 @@
     <v-footer :fixed="fixed" app>
       <span>&nbsp;&copy;2018</span>
       <span>
-        <a class="contentful-logo" href="https://www.contentful.com/" rel="nofollow" target="_blank">
-          <img src="https://images.ctfassets.net/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
-            style="max-width:100px;width:100%;" alt="Powered by Contentful" />
+        <a
+          class="contentful-logo"
+          href="https://www.contentful.com/"
+          rel="nofollow"
+          target="_blank"
+        >
+          <img
+            src="https://images.ctfassets.net/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
+            style="max-width:100px;width:100%;"
+            alt="Powered by Contentful"
+          />
         </a>
       </span>
     </v-footer>
@@ -190,12 +212,10 @@ export default {
 </script>
 
 <style>
-html {
-  overflow-y: auto;
-}
-
-.toolbar__content a {
-  color: transparent;
+.background-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
 .contentful-logo {
@@ -206,13 +226,15 @@ html {
   width: 50%;
 }
 
+html {
+  overflow-y: auto;
+}
+
 ul {
   list-style-type: none;
 }
 
-.background-container {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
+.toolbar__content a {
+  color: transparent;
 }
 </style>

@@ -1,20 +1,19 @@
 {
   "sys": {
-    "space": { "sys": [Object] },
+    "space": { "sys": [] },
     "id": "2ZR4RKQc9WG6OiuYisW8gW",
     "type": "Entry",
     "createdAt": "2018-05-03T02:40:07.457Z",
     "updatedAt": "2018-05-11T22:05:15.746Z",
-    "environment": { "sys": [Object] },
+    "environment": { "sys": [] },
     "revision": 6,
-    "contentType": { "sys": [Object] },
+    "contentType": { "sys": [] },
     "locale": "en-US"
   },
   "fields": {
-    "background": { "sys": [Object], "fields": [Object] },
+    "background": { "sys": [], "fields": [] },
     "title": "About Page",
-    "body":
-      "Tomás Tello (Lima, 1981) playing various instruments with different people and in different places. living in tavira now. i am interested in creating bubbles in time, i use sound for this. bands: e.T. (with Elisabeth Flunger) Shaolines del amor (with Raul Jardín) and also various dance pieces with Yuko Kominami (www.yukokominami.com) as well as animation and video works with Diego Vizcarra, Iván D'onadio and Martín Aramburú. directs andesground tape label alongside Mauricio Banda.",
+    "body": "Tomás Tello (Lima, 1981) playing various instruments with different people and in different places. living in tavira now. i am interested in creating bubbles in time, i use sound for this. bands: e.T. (with Elisabeth Flunger) Shaolines del amor (with Raul Jardín) and also various dance pieces with Yuko Kominami (www.yukokominami.com) as well as animation and video works with Diego Vizcarra, Iván D'onadio and Martín Aramburú. directs andesground tape label alongside Mauricio Banda.",
     "message": "thanks a lot luis salas for making this nice website :)",
     "contact": "yanaquilla@gmail.com"
   }

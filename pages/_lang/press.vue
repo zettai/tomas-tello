@@ -4,11 +4,13 @@
       <ul>
         <li v-for="p in press()" :key="p.fields.title">
           <h3>
-          <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
-          <v-icon v-else>picture_as_pdf</v-icon>
-          {{ p.fields.title }} - {{p.fields.description}}</h3>
+            <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
+            <v-icon v-else>picture_as_pdf</v-icon>
+            {{ p.fields.title }} - {{p.fields.description}}
+          </h3>
           <a v-bind:href="p.fields.file.url">Download</a>
-          <br /><br />
+          <br />
+          <br />
         </li>
       </ul>
     </main>
@@ -41,6 +43,4 @@ export default {
 </script>
 
 <style>
-
 </style>
-

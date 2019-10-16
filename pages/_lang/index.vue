@@ -1,5 +1,8 @@
 <template>
-  <div class='background-container' :style="{ backgroundImage: 'url(' + page.fields.background.fields.file.url + ')',  }" >
+  <div
+    class="background-container"
+    :style="{ backgroundImage: 'url(' + page.fields.background.fields.file.url + ')',  }"
+  >
     <no-ssr>
       <vue-particles
         color="#dedede"
@@ -17,8 +20,7 @@
         hoverMode="grab"
         :clickEffect="true"
         clickMode="push"
-      >
-      </vue-particles>
+      ></vue-particles>
     </no-ssr>
   </div>
 </template>
@@ -63,5 +65,4 @@ export default {
 </script>
 
 <style>
-
 </style>

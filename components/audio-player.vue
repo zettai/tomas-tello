@@ -1,7 +1,7 @@
 <template>
   <div>
     <audio v-on:ended="songEnded()" ref="control" controls>
-      <source ref="source" type="audio/mpeg"> Your browser does not support the audio element.
+      <source ref="source" type="audio/mpeg" />Your browser does not support the audio element.
     </audio>
   </div>
 </template>
