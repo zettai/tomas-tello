@@ -1,24 +1,24 @@
 <template>
   <v-container>
     <main>
-      <v-container grid-list-md fluid>
+      <v-container grid-list-md fluid :key="contact">
         <v-layout row wrap>
           <v-flex d-flex xs12 sm6 md6>
-            <v-card dark color="secondary" v-for="a in about()" :key="a.id" v-if="a.contact">
+            <v-card dark color="secondary">
               <v-card-text class="px-2">
-                <img :src="a.background.fields.file.url" height="100%" width="100%" />
-                <vue-markdown>{{a.body}}</vue-markdown>
+                <img :src="image" height="100%" width="100%" />
+                <vue-markdown>{{body}}</vue-markdown>
               </v-card-text>
             </v-card>
           </v-flex>
 
           <v-flex d-flex xs12 sm6 md6>
-            <v-card dark color="secondary" v-for="a in about()" :key="a.id" v-if="a.contact">
+            <v-card dark color="secondary">
               <v-card-text class="px-2">
                 <app-h1 isBrand="true">{{ $t('page.about.contact') }}</app-h1>
-                <vue-markdown>{{a.contact}}</vue-markdown>
+                <vue-markdown>{{contact}}</vue-markdown>
                 <br />
-                <vue-markdown>{{a.message}}</vue-markdown>
+                <vue-markdown>{{message}}</vue-markdown>
               </v-card-text>
               <v-btn small @click="dialog = true">
                 <v-icon>web</v-icon>
@@ -37,7 +37,7 @@
           </v-card-title>
           <v-container>
             <ul>
-              <li v-for="c in credits()" :key="c.text">
+              <li v-for="c in credits()" :key="c.id">
                 <span v-if="c.url">
                   {{ c.comment }} (
                   <a :href="c.url" rel="nofollow" target="_blank">{{c.text}}</a> )
@@ -84,12 +84,26 @@ export default {
       ]
     }
   },
+  computed: {
+    about: function() {
+      return this.$i18n.locale == 'en' ? this.$store.state.about : this.$store.state.about_es
+    },
+    body: function() {
+      return this.about && this.about.fields && this.about.fields.body
+    },
+    contact: function() {
+      return this.about && this.about.fields && this.about.fields.contact
+    },
+    image: function() {
+      return this.about && this.about.fields && this.about.fields.background.fields.file.url
+    },
+    message: function() {
+      return this.about && this.about.fields && this.about.fields.message
+    }
+  },
   methods: {
     credits() {
       return this.$store.state.credits
-    },
-    about() {
-      return this.$i18n.locale == 'en' ? this.$store.state.about : this.$store.state.about_es
     }
   }
 }

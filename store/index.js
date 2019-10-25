@@ -26,46 +26,55 @@ export const state = () => ({
   },
   credits: [
     {
+      id: '0',
       comment: 'Built by Luis Salas',
       url: 'https://twitter.com/Keinesvonuns',
       text: '@keinesvonuns'
     },
     {
+      id: '1',
       comment: 'Using Nuxt',
       url: 'https://nuxtjs.org',
       text: 'nuxtjs.org'
     },
     {
+      id: '2',
       comment: 'and Vuetify',
       url: 'https://vuetifyjs.com',
       text: 'vuetifyjs.com'
     },
     {
+      id: '3',
       comment: 'Powered by Contentful',
       url: 'https://www.contentful.com',
       text: 'contentful.com'
     },
     {
+      id: '4',
       comment: 'Hosted/Deployed by Netlify',
       url: 'https://www.netlify.com',
       text: 'netlify.com'
     },
     {
+      id: '5',
       comment: 'Repo Code in GitHub',
       url: 'https://bitbucket.org',
       text: 'github.com'
     },
     {
+      id: '6',
       comment: 'And Also...',
       url: '',
       text: ''
     },
     {
+      id: '7',
       comment: 'Vue-Particles',
       url: 'https://github.com/creotip/vue-particles',
       text: 'github.com'
     },
     {
+      id: '8',
       comment: 'Glitch Pen By Lucas Bebber',
       url: 'https://codepen.io/lbebber/pen/ypgql',
       text: 'codepen.io'
@@ -141,5 +150,5 @@ export const actions = {
   }
 }
 
-// TODO: Fix Vuex actions/mutations to avoid doing this 
+// TODO: Fix Vuex actions/mutations to avoid doing this
 export const strict = false
