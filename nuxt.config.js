@@ -28,7 +28,6 @@ const config = {
     '~/plugins/vuetify.js',
     '~/plugins/i18n.js',
     '~/plugins/contentful.js',
-    '~/plugins/vue-js-modal.js',
     '~/plugins/global.js'
   ],
   css: ['~/assets/style/app.styl', '~/assets/css/glitch.css'],
