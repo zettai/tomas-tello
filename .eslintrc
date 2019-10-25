@@ -8,6 +8,16 @@
     "import/no-unassigned-import": 0,
     "semi": ["error", "never"],
     "no-console": "off",
-    "vue/require-v-for-key": "off"
+    "vue/require-v-for-key": "off",
+    "vue/max-attributes-per-line": [
+      2,
+      {
+        "singleline": 20,
+        "multiline": {
+          "max": 1,
+          "allowFirstLine": false
+        }
+      }
+    ]
   }
 }
