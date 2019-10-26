@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <main>
-      <app-h1 isBrand="true">{{playingNow()}}</app-h1>
+      <app-h1 isBrand="true">{{ playingNow() }}</app-h1>
       <br />
       <v-btn @click="playAll()">Play All</v-btn>
       <v-btn @click="pauseSong()">
@@ -80,4 +80,3 @@ export default {
   display: inline;
 }
 </style>
-

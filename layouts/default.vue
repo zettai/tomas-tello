@@ -1,12 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      :mini-variant.sync="miniVariant"
-      :clipped="clipped"
-      v-model="drawer"
-      fixed
-      app
-    >
+    <v-navigation-drawer :mini-variant.sync="miniVariant" :clipped="clipped" v-model="drawer" fixed app>
       <v-list>
         <v-list-tile router :to="item.to" :key="i" v-for="(item, i) in items" exact>
           <v-list-tile-action>
@@ -27,7 +21,10 @@
       <nuxt-link
         v-if="$route.fullPath.split('/')[3]"
         class="hidden-xs-only"
-        :to="{ 'name': 'lang-news-slug', 'params': { 'lang': reverseLocale, 'slug': morecomplexRoute }}"
+        :to="{
+          name: 'lang-news-slug',
+          params: { lang: reverseLocale, slug: morecomplexRoute }
+        }"
       >
         <v-btn small flat>
           <h2 class="glitch" v-if="$i18n.locale === 'en'" :data-text="$t('links.spanish')">
@@ -72,12 +69,7 @@
     <v-footer :fixed="fixed" app>
       <span>&nbsp;&copy;2018</span>
       <span>
-        <a
-          class="contentful-logo"
-          href="https://www.contentful.com/"
-          rel="nofollow"
-          target="_blank"
-        >
+        <a class="contentful-logo" href="https://www.contentful.com/" rel="nofollow" target="_blank">
           <img
             src="https://images.ctfassets.net/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
             style="max-width:100px;width:100%;"
@@ -108,14 +100,46 @@ export default {
       drawer: true,
       fixed: true,
       items: [
-        { icon: 'apps', title: this.$t('links.home.title'), to: this.$t('links.home.url') },
-        { icon: 'library_music', title: this.$t('links.music.title'), to: this.$t('links.music.url') },
-        { icon: 'music_video', title: this.$t('links.video.title'), to: this.$t('links.video.url') },
-        { icon: 'photo_library', title: this.$t('links.images.title'), to: this.$t('links.images.url') },
-        { icon: 'picture_as_pdf', title: this.$t('links.press.title'), to: this.$t('links.press.url') },
-        { icon: 'announcement', title: this.$t('links.news.title'), to: this.$t('links.news.url') },
-        { icon: 'radio', title: this.$t('links.radio.title'), to: this.$t('links.radio.url') },
-        { icon: 'person_pin', title: this.$t('links.about.title'), to: this.$t('links.about.url') }
+        {
+          icon: 'apps',
+          title: this.$t('links.home.title'),
+          to: this.$t('links.home.url')
+        },
+        {
+          icon: 'library_music',
+          title: this.$t('links.music.title'),
+          to: this.$t('links.music.url')
+        },
+        {
+          icon: 'music_video',
+          title: this.$t('links.video.title'),
+          to: this.$t('links.video.url')
+        },
+        {
+          icon: 'photo_library',
+          title: this.$t('links.images.title'),
+          to: this.$t('links.images.url')
+        },
+        {
+          icon: 'picture_as_pdf',
+          title: this.$t('links.press.title'),
+          to: this.$t('links.press.url')
+        },
+        {
+          icon: 'announcement',
+          title: this.$t('links.news.title'),
+          to: this.$t('links.news.url')
+        },
+        {
+          icon: 'radio',
+          title: this.$t('links.radio.title'),
+          to: this.$t('links.radio.url')
+        },
+        {
+          icon: 'person_pin',
+          title: this.$t('links.about.title'),
+          to: this.$t('links.about.url')
+        }
       ],
       miniVariant: false,
       right: true,
@@ -199,7 +223,7 @@ export default {
       if (this.$i18n.locale === 'en') {
         return '/es' + properRoute
       } else {
-        return properRoute.replace(/^\/[^\/]+/, '')
+        return properRoute.replace(/^\/[^/]+/, '')
       }
     }
   },

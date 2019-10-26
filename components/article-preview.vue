@@ -6,18 +6,17 @@
       height="200px"
       weight="200px"
     />
-    <v-img
-      v-else
-      :src="'https://placeimg.com/200/200/animals'"
-      height="200px"
-      weight="200px"
-    />
+    <v-img v-else :src="'https://placeimg.com/200/200/animals'" height="200px" weight="200px" />
     <time class="tiny date">{{ new Date(post.fields.publishDate).toDateString() }}</time>
     <h4>
       <nuxt-link
-        :to="{ name: 'lang-news-slug', params: { lang: $i18n.locale, slug: post.fields.slug } }"
+        :to="{
+          name: 'lang-news-slug',
+          params: { lang: $i18n.locale, slug: post.fields.slug }
+        }"
         class="title"
-      >{{ post.fields.title }}</nuxt-link>
+        >{{ post.fields.title }}</nuxt-link
+      >
     </h4>
   </v-card>
 </template>
@@ -33,5 +32,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

@@ -20,7 +20,7 @@ const client = createClient()
 
 export default {
   // Calling contentful here to avoid problems with localized data
-  asyncData({ env, params }) {
+  asyncData({ env }) {
     return client
       .getEntries({
         content_type: env.CTF_BLOG_POST_TYPE_ID,

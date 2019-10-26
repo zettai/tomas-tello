@@ -6,7 +6,7 @@
           <h3>
             <v-icon v-if="p.fields.file.contentType != 'application/pdf'">description</v-icon>
             <v-icon v-else>picture_as_pdf</v-icon>
-            {{ p.fields.title }} - {{p.fields.description}}
+            {{ p.fields.title }} - {{ p.fields.description }}
           </h3>
           <a v-bind:href="p.fields.file.url">Download</a>
           <br />
@@ -18,9 +18,6 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js'
-const client = createClient()
-
 export default {
   head() {
     return {
@@ -42,5 +39,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

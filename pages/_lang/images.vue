@@ -7,7 +7,7 @@
             <v-card flat tile>
               <v-card-media
                 @click.stop="dialog = true"
-                v-on:click="fullurl=i.fields.file.url"
+                v-on:click="fullurl = i.fields.file.url"
                 :src="i.fields.file.url + '?fm=jpg&q=30'"
                 height="250px"
               ></v-card-media>
@@ -32,7 +32,7 @@
                 </v-flex>
               </v-layout>
               <v-card-actions>
-                <v-btn color="primary" flat @click.stop="dialog=false" v-on:click="fullurl=''">X</v-btn>
+                <v-btn color="primary" flat @click.stop="dialog = false" v-on:click="fullurl = ''">X</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -43,9 +43,6 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js'
-const client = createClient()
-
 export default {
   data() {
     return {
@@ -73,6 +70,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
-
+<style></style>

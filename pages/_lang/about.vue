@@ -7,7 +7,7 @@
             <v-card dark color="secondary">
               <v-card-text class="px-2">
                 <img :src="image" height="100%" width="100%" />
-                <vue-markdown>{{body}}</vue-markdown>
+                <vue-markdown>{{ body }}</vue-markdown>
               </v-card-text>
             </v-card>
           </v-flex>
@@ -16,13 +16,13 @@
             <v-card dark color="secondary">
               <v-card-text class="px-2">
                 <app-h1 isBrand="true">{{ $t('page.about.contact') }}</app-h1>
-                <vue-markdown>{{contact}}</vue-markdown>
+                <vue-markdown>{{ contact }}</vue-markdown>
                 <br />
-                <vue-markdown>{{message}}</vue-markdown>
+                <vue-markdown>{{ message }}</vue-markdown>
               </v-card-text>
               <v-btn small @click="dialog = true">
                 <v-icon>web</v-icon>
-                {{$t('links.site')}}
+                {{ $t('links.site') }}
               </v-btn>
             </v-card>
           </v-flex>
@@ -39,15 +39,14 @@
             <ul>
               <li v-for="c in credits()" :key="c.id">
                 <span v-if="c.url">
-                  {{ c.comment }} (
-                  <a :href="c.url" rel="nofollow" target="_blank">{{c.text}}</a> )
+                  {{ c.comment }} ( <a :href="c.url" rel="nofollow" target="_blank">{{ c.text }}</a> )
                 </span>
                 <span v-else>{{ c.comment }}</span>
               </li>
             </ul>
           </v-container>
           <v-card-actions>
-            <v-btn color="primary" flat @click.stop="dialog=false">Close</v-btn>
+            <v-btn color="primary" flat @click.stop="dialog = false">Close</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -56,11 +55,8 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js'
 import VueMarkdown from 'vue-markdown'
 import h1 from '@/components/h1'
-
-const client = createClient()
 
 export default {
   data() {
@@ -109,6 +105,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
-
+<style></style>

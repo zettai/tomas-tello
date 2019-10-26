@@ -1,6 +1,6 @@
 <template>
-  <h1 :class="{brand: isBrand}">
-    <slot></slot>
+  <h1 :class="{ brand: isBrand }">
+    <slot />
   </h1>
 </template>
 

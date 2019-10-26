@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="background-container"
-    :style="{ backgroundImage: 'url(' + page.fields.background.fields.file.url + ')',  }"
-  >
+  <div class="background-container" :style="{ backgroundImage: 'url(' + page.fields.background.fields.file.url + ')' }">
     <no-ssr>
       <vue-particles
         color="#dedede"
@@ -27,7 +24,6 @@
 
 <script>
 import { createClient } from '~/plugins/contentful.js'
-
 const client = createClient()
 
 export default {
@@ -44,7 +40,7 @@ export default {
     }
   },
   // Calling contentful here to avoid problems with localized data
-  asyncData({ env, store }) {
+  asyncData() {
     return Promise.all([
       client.getEntries({
         content_type: 'page',
@@ -64,5 +60,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

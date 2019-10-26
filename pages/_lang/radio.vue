@@ -3,7 +3,7 @@
     <main>
       <ul>
         <li v-for="p in radio()" :key="p.id">
-          <app-h1 isBrand="true" v-if="p.message">{{p.message}}</app-h1>
+          <app-h1 isBrand="true" v-if="p.message">{{ p.message }}</app-h1>
           <v-spacer></v-spacer>
           <iframe v-if="p.body" :src="p.body" height="395px" scrolling="no" frameborder="no"></iframe>
         </li>
@@ -13,10 +13,7 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js'
 import h1 from '@/components/h1'
-
-const client = createClient()
 
 export default {
   components: {
@@ -42,5 +39,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

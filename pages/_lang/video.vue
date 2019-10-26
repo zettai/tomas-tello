@@ -7,7 +7,8 @@
             <v-card flat tile>
               <h3>{{ v.fields.title }}</h3>
               <video width="100%" controls>
-                <source :src="v.fields.file.url" type="video/mp4" />Your browser does not support the video element.
+                <source :src="v.fields.file.url" type="video/mp4" />
+                Your browser does not support the video element.
               </video>
               <br />
             </v-card>
@@ -19,9 +20,6 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js'
-const client = createClient()
-
 export default {
   head() {
     return {
