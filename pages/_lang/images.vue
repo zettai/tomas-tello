@@ -5,12 +5,12 @@
         <v-layout row wrap>
           <v-flex v-for="i in images" :key="i.fields.title" xs6 md2>
             <v-card flat tile>
-              <v-card-media
+              <v-img
                 @click.stop="dialog = true"
                 v-on:click="fullurl = i.fields.file.url"
                 :src="i.fields.file.url + '?fm=jpg&q=30'"
                 height="250px"
-              ></v-card-media>
+              ></v-img>
             </v-card>
           </v-flex>
         </v-layout>
