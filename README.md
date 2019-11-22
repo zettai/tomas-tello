@@ -35,7 +35,7 @@ Tomás Tello (Lima, 1981) plays various instruments with different people and in
 # Development Setup
 
 ## Install dependencies
-`$ npm install` or `$ yarn install`
+`$ npm install`
 
 ## Serve with hot reload at localhost:3000
 `$ npm run dev`
