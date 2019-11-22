@@ -13,7 +13,7 @@ Tomás Tello (Lima, 1981) plays various instruments with different people and in
     <img alt="license: MIT" src="https://img.shields.io/github/license/zettai/test"></a>
 
 <a href="/package.json">
-    <img alt="package: Version" src="https://img.shields.io/github/package-json/v/zettai/test"></a>
+    <img alt="package: Version" src="https://img.shields.io/github/package-json/v/zettai/tomas-tello"></a>
    
 <a href="https://tomas-tello.stream">
    <img alt="website: Status"src="https://img.shields.io/website?url=https%3A%2F%2Ftomas-tello.stream" ></a>
