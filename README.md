@@ -22,10 +22,10 @@ Tomás Tello (Lima, 1981) plays various instruments with different people and in
     <img alt="building: Netlify" src="https://img.shields.io/netlify/f01cec5f-b196-4e6e-a0fe-653d8fef406e" ></a>
 
 <a href="https://twitter.com/shaolindelamor">
-    <img alt="Follow Tomas on Twitter" src="https://img.shields.io/twitter/follow/shaolindelamor.svg"></a>
+    <img alt="Follow Tomas on Twitter" src="https://img.shields.io/twitter/follow/shaolindelamor?label=Follow%20Tomas&style=social"></a>
     
 <a href="https://twitter.com/keinesvonuns">
-    <img alt="Follow Luis on Twitter" src="https://img.shields.io/twitter/follow/keinesvonuns?style=social"></a>
+    <img alt="Follow Luis on Twitter" src="https://img.shields.io/twitter/follow/keinesvonuns?label=Follow%20Luis&style=social"></a>
 </p>
 
 ![Screenshot](/static/screenshot.png)
