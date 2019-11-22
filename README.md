@@ -52,8 +52,8 @@ $ npm start
 > For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
 
 # Also Using
--[Vue-Particles by Creotip](https://github.com/creotip/vue-particles)
--[Glitch Pen By Lucas Bebber](https://codepen.io/lbebber/pen/ypgql)
+* [Vue-Particles by Creotip](https://github.com/creotip/vue-particles)
+* [Glitch Pen By Lucas Bebber](https://codepen.io/lbebber/pen/ypgql)
 
 
 # License
