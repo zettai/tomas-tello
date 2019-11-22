@@ -58,7 +58,7 @@ export const state = () => ({
     {
       id: '5',
       comment: 'Repo Code in GitHub',
-      url: 'https://bitbucket.org',
+      url: 'https://github.com/zettai/tomas-tello',
       text: 'github.com'
     },
     {
