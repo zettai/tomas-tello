@@ -1,5 +1,5 @@
 
-## Tomás Tello Official Website
+# Tomás Tello Official Website
 Tomás Tello (Lima, 1981) plays various instruments with different people and in different places. This is his official website.
 
 <p align="center">
@@ -32,30 +32,30 @@ Tomás Tello (Lima, 1981) plays various instruments with different people and in
 
 > Using Nuxt.js + Vuetify.js + Contenful
 
-# Development Setup
+## Development Setup
 
-## Install dependencies
+### Install dependencies
 `$ npm install`
 
-## Serve with hot reload at localhost:3000
+### Serve with hot reload at localhost:3000
 `$ npm run dev`
 
-## Build for production and launch server
+### Build for production and launch server
 ```
 $ npm run build
 $ npm start
 ```
 
-## Generate static project
+### Generate static project
 `$ npm run generate`
 
 > For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
 
-# Also Using
--[Vue-Particles by Creotip](https://github.com/creotip/vue-particles)
--[Glitch Pen By Lucas Bebber](https://codepen.io/lbebber/pen/ypgql)
+## Also Using
+* [Vue-Particles by Creotip](https://github.com/creotip/vue-particles)
+* [Glitch Pen By Lucas Bebber](https://codepen.io/lbebber/pen/ypgql)
 
 
-# License
+## License
 
 See [LICENSE](LICENSE).
