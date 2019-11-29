@@ -10,7 +10,7 @@ Tomás Tello (Lima, 1981) plays various instruments with different people and in
     <img alt="vue tooling: Vetur" src="https://img.shields.io/badge/vue%20tooling-vetur-blue.svg"></a>
     
 <a href="/LICENSE">
-    <img alt="license: MIT" src="https://img.shields.io/github/license/zettai/test"></a>
+    <img alt="license: MIT" src="https://img.shields.io/github/license/zettai/tomas-tello"></a>
 
 <a href="/package.json">
     <img alt="package: Version" src="https://img.shields.io/github/package-json/v/zettai/tomas-tello"></a>
