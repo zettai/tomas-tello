@@ -67,7 +67,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
-      <span>&nbsp;&copy;2019</span>
+      <span>&nbsp;&copy;2020</span>
       <span>
         <a class="contentful-logo" href="https://www.contentful.com/" rel="nofollow" target="_blank">
           <img
