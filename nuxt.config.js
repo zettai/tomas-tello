@@ -35,6 +35,9 @@ const config = {
   build: {
     vendor: ['~/plugins/vuetify.js', 'vue-i18n']
   },
+  modules: [
+    ['nuxt-matomo', { matomoUrl: '//matomo.keines.net/', siteId: 1 }],
+  ],
   generate: {
     routes() {
       return Promise.all([
