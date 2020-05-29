@@ -3,13 +3,10 @@
     <main>
       <v-container grid-list-sm fluid>
         <v-layout row wrap>
-          <v-flex lg3 v-for="v in video" :key="v.fields.title">
+          <v-flex v-for="v in video" :key="v.fields.title">
             <v-card flat tile>
               <h3>{{ v.fields.title }}</h3>
-              <video width="100%" controls>
-                <source :src="v.fields.file.url" type="video/mp4" />
-                Your browser does not support the video element.
-              </video>
+              <vimeo-player player-width="auto" ref="player" :video-id="v.fields.vimeoId"/>
               <br />
             </v-card>
           </v-flex>
@@ -20,6 +17,8 @@
 </template>
 
 <script>
+import { vueVimeoPlayer } from 'vue-vimeo-player'
+
 export default {
   head() {
     return {
@@ -33,6 +32,7 @@ export default {
       ]
     }
   },
+  components: { vueVimeoPlayer },
   computed: {
     video: function() {
       return this.$store.state.videos
@@ -44,5 +44,8 @@ export default {
 <style scoped>
 ul {
   list-style-type: none;
+}
+.layout {
+  width: min-content;
 }
 </style>

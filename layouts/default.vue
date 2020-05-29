@@ -72,7 +72,7 @@
         <a class="contentful-logo" href="https://www.contentful.com/" rel="nofollow" target="_blank">
           <img
             src="https://images.ctfassets.net/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
-            style="max-width:100px;width:100%;"
+            style="width:20%;"
             alt="Powered by Contentful"
           />
         </a>
@@ -153,7 +153,7 @@ export default {
   },
   methods: {
     filterContentful() {
-      let pageTitles = ['Music Page', 'Video Page', 'Images Page', 'Press Page', 'Radio Page', 'About Page']
+      let pageTitles = ['Music Page', 'Vimeo Page', 'Images Page', 'Press Page', 'Radio Page', 'About Page']
 
       pageTitles.forEach(title => {
         function findExactPage(item) {
@@ -163,8 +163,8 @@ export default {
           case 'Music Page':
             this.$store.state.songs = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
             break
-          case 'Video Page':
-            this.$store.state.videos = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
+          case 'Vimeo Page':
+            this.$store.state.videos = this.$store.state.contentful.items.filter(findExactPage)[0].fields.vimeoLinks
             break
           case 'Images Page':
             this.$store.state.images = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles

@@ -25,6 +25,7 @@ const config = {
   },
   plugins: [
     { src: '~/plugins/vue-particles.js', ssr: false },
+    { src: `~plugins/vimeo-player`, ssr: false },
     '~/plugins/vuetify.js',
     '~/plugins/i18n.js',
     '~/plugins/contentful.js',
