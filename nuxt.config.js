@@ -31,14 +31,12 @@ const config = {
     '~/plugins/contentful.js',
     '~/plugins/global.js'
   ],
-  css: ['~/assets/style/app.styl', '~/assets/css/glitch.css'],
+  css: ['~/assets/style/app.styl', '~/assets/css/glitch.css', '~/assets/css/iframe.css'],
   loading: { color: '#3B8070' },
   build: {
     vendor: ['~/plugins/vuetify.js', 'vue-i18n']
   },
-  modules: [
-    ['nuxt-matomo', { matomoUrl: '//matomo.keines.net/', siteId: 1 }],
-  ],
+  modules: [['nuxt-matomo', { matomoUrl: '//matomo.keines.net/', siteId: 1 }]],
   generate: {
     routes() {
       return Promise.all([

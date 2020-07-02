@@ -5,7 +5,7 @@
         <li v-for="p in radio()" :key="p.id">
           <app-h1 isBrand="true" v-if="p.message">{{ p.message }}</app-h1>
           <v-spacer></v-spacer>
-          <iframe v-if="p.body" :src="p.body" height="395px" scrolling="no" frameborder="no"></iframe>
+          <iframe v-if="p.body" :src="p.body" class="resp-iframe" scrolling="yes" frameborder="no"></iframe>
         </li>
       </ul>
     </main>
