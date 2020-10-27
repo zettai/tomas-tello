@@ -3,6 +3,9 @@
     <main>
       <app-h1 isBrand="true">{{ playingNow() }}</app-h1>
       <br />
+      <v-btn v-bind:href="download_link" target="_blank"> Download zip&nbsp;<v-icon>save_alt</v-icon></v-btn>
+      <v-btn v-bind:href="donate" target="_blank"> Donate&nbsp;<v-icon>wallet_giftcard</v-icon></v-btn>
+      <br />
       <v-btn @click="playAll()">Play All</v-btn>
       <v-btn @click="pauseSong()">
         <v-icon>play_arrow</v-icon>/
@@ -13,9 +16,6 @@
           <div>
             <v-btn color="normal" icon @click="playSong(m.fields.file.url, m.fields.title)">
               <v-icon>play_arrow</v-icon>
-            </v-btn>
-            <v-btn icon v-bind:href="m.fields.file.url">
-              <v-icon>save_alt</v-icon>
             </v-btn>
             <h3 class="inline-info">&nbsp;&nbsp;{{ m.fields.title }}</h3>
           </div>
@@ -42,6 +42,12 @@ export default {
       ]
     }
   },
+  data() {
+    return {
+      download_link: 'https://u.pcloud.link/publink/show?code=XZ0UopXZ2hVbAWRy9JhHQdrWuzJt0Q9zmdKX',
+      donate: 'https://www.paypal.com/paypalme/shaolindelamor'
+    }
+  },
   components: {
     'app-h1': h1
   },
@@ -51,6 +57,13 @@ export default {
     }
   },
   methods: {
+    downloadFile(file) {
+      const link = document.createElement('a')
+      link.href = file
+      link.download = file
+      link.click()
+      URL.revokeObjectURL(link.href)
+    },
     playingNow() {
       return this.$store.state.playingNow
     },

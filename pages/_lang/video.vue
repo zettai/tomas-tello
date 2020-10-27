@@ -6,7 +6,9 @@
           <v-flex v-for="v in video" :key="v.fields.title">
             <v-card flat tile>
               <h3>{{ v.fields.title }}</h3>
-              <vimeo-player player-width="auto" ref="player" :video-id="v.fields.vimeoId"/>
+              <client-only placeholder="Loading...">
+                <youtube :video-id="v.fields.videmoLink"></youtube>
+              </client-only>
               <br />
             </v-card>
           </v-flex>
@@ -17,8 +19,6 @@
 </template>
 
 <script>
-import { vueVimeoPlayer } from 'vue-vimeo-player'
-
 export default {
   head() {
     return {
@@ -32,7 +32,6 @@ export default {
       ]
     }
   },
-  components: { vueVimeoPlayer },
   computed: {
     video: function() {
       return this.$store.state.videos
