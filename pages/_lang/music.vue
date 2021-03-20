@@ -1,13 +1,13 @@
 <template>
   <v-container>
     <main>
-      <app-h1 isBrand="true">{{ playingNow() }}</app-h1>
+      <h2 isBrand="true">{{ playingNow() }}</h2>
       <br />
-      <v-btn v-bind:href="download_link" target="_blank"> Download Cimora (Zip)&nbsp;<v-icon>save_alt</v-icon></v-btn>
       <v-btn v-bind:href="download_link2" target="_blank"> Download Varios (Zip)&nbsp;<v-icon>save_alt</v-icon></v-btn>
-
       <br />
 
+      <v-btn @click="playAll()">Play All</v-btn>
+      <v-btn @click="skipSong()">Skip</v-btn>
       <v-btn @click="pauseSong()">
         <v-icon>play_arrow</v-icon>/
         <v-icon>pause</v-icon>
@@ -64,6 +64,9 @@ export default {
     },
   },
   methods: {
+    skipSong() {
+      this.$root.$emit('skip-song')
+    },
     downloadFile(file) {
       const link = document.createElement('a')
       link.href = file
@@ -84,9 +87,15 @@ export default {
     pauseSong() {
       this.$root.$emit('play-pause-song', null)
     },
-    // playAll() {
-    //   this.$root.$emit('play-all', this.albums)
-    // },
+    playAll() {
+      const songs = []
+      this.albums.items.forEach((alb) => {
+        alb.fields.cancion.forEach((c) => {
+          songs.push(c)
+        })
+      })
+      this.$root.$emit('play-all', songs)
+    },
     ...mapMutations(['showSnackbar', 'closeSnackbar', 'setSongName']),
     openSnackbar(message) {
       this.showSnackbar({ text: message })

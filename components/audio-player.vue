@@ -14,15 +14,18 @@ export default {
   data() {
     return {
       loaded: false,
-      playList: {}
+      playList: {},
     }
   },
   mounted() {
-    this.$root.$on('play-song', data => {
+    this.$root.$on('play-song', (data) => {
       this.loaded = true
       this.playSingleSong(data)
     })
-    this.$root.$on('play-all', data => {
+    this.$root.$on('skip-song', (data) => {
+      this.songEnded()
+    })
+    this.$root.$on('play-all', (data) => {
       this.loaded = true
       this.playAllSongs(data)
     })
@@ -49,21 +52,22 @@ export default {
       control.paused == true ? control.play() : control.pause()
       control.paused == true ? this.openSnackbar('Paused') : this.openSnackbar('Play')
     },
-    playSingleSong(data) {
+    playSingleSong(song) {
       let source = this.$refs.source
       let control = this.$refs.control
 
-      source.src = data.url
-      this.setSongName(data.fileName)
-      this.openSnackbar(data.fileName)
-      control.load()
-      control.play()
+      if (song.url && song.fileName) {
+        source.src = song.url
+        this.setSongName(song.fileName)
+        this.openSnackbar(song.fileName)
+        control.load()
+        control.play()
+      }
     },
     playAllSongs(data) {
       this.playList = JSON.parse(JSON.stringify(data))
       let newSong = this.playList.shift()
       let song = {}
-
       song.url = newSong.fields.file.url
       song.fileName = newSong.fields.title
       this.playSingleSong(song)
@@ -71,8 +75,8 @@ export default {
     ...mapMutations(['showSnackbar', 'closeSnackbar', 'setSongName']),
     openSnackbar(message) {
       this.showSnackbar({ text: message })
-    }
-  }
+    },
+  },
 }
 </script>
 

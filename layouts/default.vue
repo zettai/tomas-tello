@@ -154,7 +154,7 @@ export default {
   },
   methods: {
     filterContentfulAlbums() {
-      console.log('here', this.$store.state.contentful.items)
+      // console.log('here', this.$store.state.contentful.items)
     },
     filterContentful() {
       let pageTitles = ['Music Page', 'Vimeo Page', 'Images Page', 'Press Page', 'Radio Page', 'About Page']
@@ -163,22 +163,24 @@ export default {
         function findExactPage(item) {
           return item.fields.title === title
         }
-        switch (title) {
-          case 'Vimeo Page':
-            this.$store.state.videos = this.$store.state.contentful.items.filter(findExactPage)[0].fields.vimeoLinks
-            break
-          case 'Images Page':
-            this.$store.state.images = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
-            break
-          case 'Press Page':
-            this.$store.state.press = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
-            break
-          case 'Radio Page':
-            this.$store.state.radio = this.$store.state.contentful.items.filter(findExactPage)[0]
-            break
-          case 'About Page':
-            this.$store.state.about = this.$store.state.contentful.items.filter(findExactPage)[0]
-            break
+        if (this.$store.state.contentful.items) {
+          switch (title) {
+            case 'Vimeo Page':
+              this.$store.state.videos = this.$store.state.contentful.items.filter(findExactPage)[0].fields.vimeoLinks
+              break
+            case 'Images Page':
+              this.$store.state.images = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
+              break
+            case 'Press Page':
+              this.$store.state.press = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
+              break
+            case 'Radio Page':
+              this.$store.state.radio = this.$store.state.contentful.items.filter(findExactPage)[0]
+              break
+            case 'About Page':
+              this.$store.state.about = this.$store.state.contentful.items.filter(findExactPage)[0]
+              break
+          }
         }
       })
     },
@@ -189,16 +191,20 @@ export default {
         function findExactPage(item) {
           return item.fields.title === title
         }
-        switch (title) {
-          case 'Press Page':
-            this.$store.state.press_es = this.$store.state.contentful_es.items.filter(findExactPage)[0].fields.pagefiles
-            break
-          case 'Radio Page':
-            this.$store.state.radio_es = this.$store.state.contentful_es.items.filter(findExactPage)[0]
-            break
-          case 'About Page':
-            this.$store.state.about_es = this.$store.state.contentful_es.items.filter(findExactPage)[0]
-            break
+        if (this.$store.state.contentful_es.items) {
+          switch (title) {
+            case 'Press Page':
+              this.$store.state.press_es = this.$store.state.contentful_es.items.filter(
+                findExactPage
+              )[0].fields.pagefiles
+              break
+            case 'Radio Page':
+              this.$store.state.radio_es = this.$store.state.contentful_es.items.filter(findExactPage)[0]
+              break
+            case 'About Page':
+              this.$store.state.about_es = this.$store.state.contentful_es.items.filter(findExactPage)[0]
+              break
+          }
         }
       })
     },
@@ -244,11 +250,12 @@ export default {
 }
 
 .contentful-logo {
-  padding: 2rem;
+  padding-left: 1em;
 }
 
 .contentful-logo > img {
-  width: 50%;
+  width: 5em !important;
+  height: auto;
 }
 
 html {
