@@ -23,7 +23,7 @@
         class="hidden-xs-only"
         :to="{
           name: 'lang-news-slug',
-          params: { lang: reverseLocale, slug: morecomplexRoute }
+          params: { lang: reverseLocale, slug: morecomplexRoute },
         }"
       >
         <v-btn small flat>
@@ -67,12 +67,12 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
-      <span>&nbsp;&copy;2020</span>
+      <span>&nbsp;&copy;2021</span>
       <span>
         <a class="contentful-logo" href="https://www.contentful.com/" rel="nofollow" target="_blank">
           <img
             src="https://images.ctfassets.net/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg"
-            style="width:20%;"
+            style="width: 20%"
             alt="Powered by Contentful"
           />
         </a>
@@ -90,8 +90,8 @@ export default {
     return {
       htmlAttrs: {
         // Set html lang tag
-        lang: this.$store.state.locale
-      }
+        lang: this.$store.state.locale,
+      },
     }
   },
   data() {
@@ -103,66 +103,67 @@ export default {
         {
           icon: 'apps',
           title: this.$t('links.home.title'),
-          to: this.$t('links.home.url')
+          to: this.$t('links.home.url'),
         },
         {
           icon: 'library_music',
           title: this.$t('links.music.title'),
-          to: this.$t('links.music.url')
+          to: this.$t('links.music.url'),
         },
         {
           icon: 'music_video',
           title: this.$t('links.video.title'),
-          to: this.$t('links.video.url')
+          to: this.$t('links.video.url'),
         },
         {
           icon: 'photo_library',
           title: this.$t('links.images.title'),
-          to: this.$t('links.images.url')
+          to: this.$t('links.images.url'),
         },
         {
           icon: 'picture_as_pdf',
           title: this.$t('links.press.title'),
-          to: this.$t('links.press.url')
+          to: this.$t('links.press.url'),
         },
         {
           icon: 'announcement',
           title: this.$t('links.news.title'),
-          to: this.$t('links.news.url')
+          to: this.$t('links.news.url'),
         },
         {
           icon: 'radio',
           title: this.$t('links.radio.title'),
-          to: this.$t('links.radio.url')
+          to: this.$t('links.radio.url'),
         },
         {
           icon: 'person_pin',
           title: this.$t('links.about.title'),
-          to: this.$t('links.about.url')
-        }
+          to: this.$t('links.about.url'),
+        },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Tomás Tello'
+      title: 'Tomás Tello',
     }
   },
   created() {
     this.$store.dispatch('filterContentful', { self: this })
     this.$store.dispatch('filterContentfulES', { self: this })
+    this.$store.dispatch('filterContentfulAlbums', { self: this })
   },
   methods: {
+    filterContentfulAlbums() {
+      console.log('here', this.$store.state.contentful.items)
+    },
     filterContentful() {
       let pageTitles = ['Music Page', 'Vimeo Page', 'Images Page', 'Press Page', 'Radio Page', 'About Page']
 
-      pageTitles.forEach(title => {
+      pageTitles.forEach((title) => {
         function findExactPage(item) {
           return item.fields.title === title
         }
         switch (title) {
-          case 'Music Page':
-            this.$store.state.songs = this.$store.state.contentful.items.filter(findExactPage)[0].fields.pagefiles
-            break
           case 'Vimeo Page':
             this.$store.state.videos = this.$store.state.contentful.items.filter(findExactPage)[0].fields.vimeoLinks
             break
@@ -184,7 +185,7 @@ export default {
     filterContentfulES() {
       let pageTitles = ['Press Page', 'Radio Page', 'About Page']
 
-      pageTitles.forEach(title => {
+      pageTitles.forEach((title) => {
         function findExactPage(item) {
           return item.fields.title === title
         }
@@ -200,23 +201,23 @@ export default {
             break
         }
       })
-    }
+    },
   },
   components: {
     AudioPlayer,
-    SnackbarStore
+    SnackbarStore,
   },
   computed: {
-    reverseLocale: function() {
+    reverseLocale: function () {
       return this.$i18n.locale == 'en' ? 'es' : 'en'
     },
-    morecomplexRoute: function() {
+    morecomplexRoute: function () {
       let slug = ''
       slug = this.$route.fullPath.split('/')[3]
 
       return slug
     },
-    complexRoute: function() {
+    complexRoute: function () {
       let properRoute = ''
       properRoute = this.$route.fullPath
 
@@ -225,13 +226,13 @@ export default {
       } else {
         return properRoute.replace(/^\/[^/]+/, '')
       }
-    }
+    },
   },
   watch: {
     $route() {
       Object.assign(this.$data, this.$options.data.call(this))
-    }
-  }
+    },
+  },
 }
 </script>
 

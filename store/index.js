@@ -10,6 +10,7 @@ export const state = () => ({
   playingNow: '',
   sidebar: false,
   songs: [],
+  albums: [],
   videos: [],
   about: [],
   about_es: [],
@@ -111,6 +112,9 @@ export const mutations = {
       state.locale = locale
     }
   },
+  FILTER_CONTENFUL_ALBUMS(state, response) {
+    state.albums = response
+  },
   FILTER_CONTENFUL(state, response) {
     state.contentful = response
   },
@@ -130,6 +134,20 @@ export const actions = {
     ])
       .then(([response]) => {
         commit('FILTER_CONTENFUL', response)
+        self.filterContentful()
+      })
+      .catch(console.error)
+  },
+  filterContentfulAlbums({ commit }, { self }) {
+    return Promise.all([
+      client.getEntries({
+        content_type: 'albums',
+        locale: 'en-US',
+        order: '-sys.createdAt'
+      })
+    ])
+      .then(([response]) => {
+        commit('FILTER_CONTENFUL_ALBUMS', response)
         self.filterContentful()
       })
       .catch(console.error)

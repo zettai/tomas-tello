@@ -7,7 +7,7 @@
             <v-card dark color="secondary">
               <v-card-text class="px-2">
                 <img :src="image" height="100%" width="100%" />
-                <vue-markdown>{{ body }}</vue-markdown>
+                <div v-html="body"></div>
               </v-card-text>
             </v-card>
           </v-flex>
@@ -16,9 +16,9 @@
             <v-card dark color="secondary">
               <v-card-text class="px-2">
                 <app-h1 isBrand="true">{{ $t('page.about.contact') }}</app-h1>
-                <vue-markdown>{{ contact }}</vue-markdown>
+                <div v-html="contact"></div>
                 <br />
-                <vue-markdown>{{ message }}</vue-markdown>
+                <div v-html="message"></div>
               </v-card-text>
               <v-btn small @click="dialog = true">
                 <v-icon>web</v-icon>
@@ -55,18 +55,17 @@
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+import marked from 'marked'
 import h1 from '@/components/h1'
 
 export default {
   data() {
     return {
-      dialog: false
+      dialog: false,
     }
   },
   components: {
-    VueMarkdown,
-    'app-h1': h1
+    'app-h1': h1,
   },
   head() {
     return {
@@ -75,33 +74,33 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.$t('page.about.meta.description')
-        }
-      ]
+          content: this.$t('page.about.meta.description'),
+        },
+      ],
     }
   },
   computed: {
-    about: function() {
+    about: function () {
       return this.$i18n.locale == 'en' ? this.$store.state.about : this.$store.state.about_es
     },
-    body: function() {
-      return this.about && this.about.fields && this.about.fields.body
+    body: function () {
+      return this.about && this.about.fields && marked(this.about.fields.body, { sanitize: false })
     },
-    contact: function() {
-      return this.about && this.about.fields && this.about.fields.contact
+    contact: function () {
+      return this.about && this.about.fields && marked(this.about.fields.contact, { sanitize: false })
     },
-    image: function() {
+    image: function () {
       return this.about && this.about.fields && this.about.fields.background.fields.file.url
     },
-    message: function() {
-      return this.about && this.about.fields && this.about.fields.message
-    }
+    message: function () {
+      return this.about && this.about.fields && marked(this.about.fields.message, { sanitize: false })
+    },
   },
   methods: {
     credits() {
       return this.$store.state.credits
-    }
-  }
+    },
+  },
 }
 </script>
 
